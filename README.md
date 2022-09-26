@@ -20,8 +20,7 @@ use Apple-like iOS apps style. figma file link: @link
 - teachers 
 - subjects
 - superheroes
-- help 
-//
+- help
 - telegram auth
 - firebase tools 
 - api 
