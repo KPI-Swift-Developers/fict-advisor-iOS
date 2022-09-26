@@ -13,3 +13,17 @@ use Apple-like iOS apps style. figma file link: @link
 - moduled system for all parts of programm 
 - table interface mostly 
 - iPadOS support 
+
+## programm parts 
+- main page
+- settings 
+- teachers 
+- subjects
+- superheroes
+- help 
+//
+- telegram auth
+- firebase tools 
+- api 
+
+
