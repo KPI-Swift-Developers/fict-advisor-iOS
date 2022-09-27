@@ -14,7 +14,7 @@ class TeachersViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         return tableView
     }()
     
@@ -55,11 +55,9 @@ private extension TeachersViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
+        tableView.register(TeachersTableViewCell.self, forCellReuseIdentifier: TeachersTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 
@@ -69,8 +67,10 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = teachers[indexPath.row].firstName + " " + teachers[indexPath.row].lastName
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeachersTableViewCell.identifier, for: indexPath) as? TeachersTableViewCell
+        guard let cell = cell else { return UITableViewCell()}
+        cell.nameLabel.text = teachers[indexPath.row].firstName + " " + teachers[indexPath.row].lastName
+        cell.ratingLabel.text = "Рейтинг: " + String(teachers[indexPath.row].rating)
         return cell
     }
 }
