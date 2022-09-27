@@ -14,6 +14,8 @@
 		3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF684F28E303B9000BFD72 /* TabBarViewController.swift */; };
 		3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685128E304D8000BFD72 /* TeachersViewController.swift */; };
 		3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */; };
+		3EAF685728E3057A000BFD72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685628E3057A000BFD72 /* SnapKit */; };
+		3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685928E30589000BFD72 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAF685728E3057A000BFD72 /* SnapKit in Frameworks */,
+				3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +130,10 @@
 			dependencies = (
 			);
 			name = "fictadvisor-iOS";
+			packageProductDependencies = (
+				3EAF685628E3057A000BFD72 /* SnapKit */,
+				3EAF685928E30589000BFD72 /* Alamofire */,
+			);
 			productName = "fictadvisor-iOS";
 			productReference = 3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +162,10 @@
 				Base,
 			);
 			mainGroup = 3EAF682328E2F8E1000BFD72;
+			packageReferences = (
+				3EAF685528E3057A000BFD72 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3EAF685828E30589000BFD72 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3EAF682D28E2F8E1000BFD72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -396,6 +408,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3EAF685528E3057A000BFD72 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		3EAF685828E30589000BFD72 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3EAF685628E3057A000BFD72 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EAF685528E3057A000BFD72 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		3EAF685928E30589000BFD72 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EAF685828E30589000BFD72 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EAF682428E2F8E1000BFD72 /* Project object */;
 }
