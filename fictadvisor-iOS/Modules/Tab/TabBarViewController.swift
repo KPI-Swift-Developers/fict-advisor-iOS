@@ -16,8 +16,8 @@ class TabBarViewController: UITabBarController {
         vc1.view.backgroundColor = .red
         vc2.view.backgroundColor = .cyan
         
-        vc1.title = "1"
-        vc2.title = "2"
+        vc1.title = "Subjects"
+        vc2.title = "Teachers"
         
         setViewControllers([vc1, vc2], animated: false)
     }
