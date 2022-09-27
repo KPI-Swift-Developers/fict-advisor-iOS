@@ -34,6 +34,10 @@ class SubjectsViewController: UIViewController {
             },
             errorCompletion: nil
         )
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchVC
+        searchVC.hidesNavigationBarDuringPresentation = false 
     }
     
     private var isAppeared = false
@@ -41,6 +45,7 @@ class SubjectsViewController: UIViewController {
     
     private let service: SubjectsServiceTarget
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let searchVC = UISearchController()
 }
 
 private extension SubjectsViewController {
@@ -70,12 +75,20 @@ private extension SubjectsViewController {
 }
 
 extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return subjects.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath).self
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "cell",
+            for: indexPath)
         cell.textLabel?.text = subjects[indexPath.row].name
         return cell
     }
