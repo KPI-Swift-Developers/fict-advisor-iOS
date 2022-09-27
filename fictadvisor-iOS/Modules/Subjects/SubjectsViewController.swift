@@ -32,14 +32,12 @@ class SubjectsViewController: UIViewController {
                 [unowned self] _subjects in
                 displaySubjects(_subjects)
             },
-            errorCompletion: nil
-        )
+            errorCompletion: nil)
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchVC
-        searchVC.hidesNavigationBarDuringPresentation = false 
+        configureSearchVC()
+        configureButtons()
     }
-    
+
     private var isAppeared = false
     private var subjects = Subjects()
     
@@ -49,6 +47,14 @@ class SubjectsViewController: UIViewController {
 }
 
 private extension SubjectsViewController {
+    @objc func didTapEditButton(sender: AnyObject) {
+
+    }
+
+    @objc func didTapSearchButton(sender: AnyObject) {
+
+    }
+    
     func configureViewController() {
         title = "Subjects"
         tabBarItem.image = UIImage(systemName: "book.closed.fill")!
@@ -63,7 +69,31 @@ private extension SubjectsViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: "cell")
+    }
+    
+    func configureButtons() {
+        let editImage = UIImage(systemName: "arrow.up.arrow.down.circle")!
+        let searchImage = UIImage(systemName: "plus")!
+        let editButton = UIBarButtonItem(
+            image: editImage,
+            style: .plain,
+            target: self,
+            action: #selector(didTapEditButton))
+        let searchButton = UIBarButtonItem(
+            image: searchImage,
+            style: .plain,
+            target: self,
+            action: #selector(didTapSearchButton))
+        navigationItem.rightBarButtonItems = [editButton, searchButton]
+    }
+    
+    func configureSearchVC() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchVC
+        searchVC.hidesNavigationBarDuringPresentation = false
     }
 }
 
