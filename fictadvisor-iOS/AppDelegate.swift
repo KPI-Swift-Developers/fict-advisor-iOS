@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = UIViewController()
-        vc.view.backgroundColor = .cyan
-        window?.rootViewController = vc
+        window?.rootViewController = TabBarViewController()
         window?.makeKeyAndVisible()
         return true
     }
