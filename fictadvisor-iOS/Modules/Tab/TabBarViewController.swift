@@ -15,9 +15,12 @@ class TabBarViewController: UITabBarController {
         let vc2 = SubjectsViewController.module
         
         vc1.view.backgroundColor = .red
-        vc1.title = "Subjects"
+        vc1.title = "Teachers"
         
-        setViewControllers([vc1, vc2], animated: false)
+        setViewControllers(
+            [UINavigationController(rootViewController: vc2), vc1],
+            animated: false
+        )
     }
     
     required init?(coder: NSCoder) {

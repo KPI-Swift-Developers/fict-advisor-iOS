@@ -14,6 +14,7 @@ class SubjectsViewController: UIViewController {
         self.service = service
         super.init(nibName: nil, bundle: nil)
         configureTableView()
+        configureViewController()
     }
     
     required init?(coder: NSCoder) {
@@ -44,7 +45,6 @@ class SubjectsViewController: UIViewController {
 
 private extension SubjectsViewController {
     func configureViewController() {
-        view.backgroundColor = .lightGray
         title = "Teachers"
     }
     
