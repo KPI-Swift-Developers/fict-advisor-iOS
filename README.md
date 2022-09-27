@@ -24,5 +24,6 @@ use Apple-like iOS apps style. figma file link: https://www.figma.com/file/jkZ7k
 - telegram auth
 - firebase tools 
 - api 
+- translation strings (?)
 
 
