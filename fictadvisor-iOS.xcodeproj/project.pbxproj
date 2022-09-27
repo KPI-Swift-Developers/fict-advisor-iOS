@@ -16,6 +16,8 @@
 		3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */; };
 		3EAF685728E3057A000BFD72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685628E3057A000BFD72 /* SnapKit */; };
 		3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685928E30589000BFD72 /* Alamofire */; };
+		3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685B28E316E5000BFD72 /* SubjectsService.swift */; };
+		3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3EAF684F28E303B9000BFD72 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3EAF685128E304D8000BFD72 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
+		3EAF685B28E316E5000BFD72 /* SubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsService.swift; sourceTree = "<group>"; };
+		3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectViewController+Module.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
+				3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */,
+				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
@@ -192,9 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
+				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
 			);
