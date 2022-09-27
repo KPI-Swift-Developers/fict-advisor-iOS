@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
+		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
+		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				3EAF685128E304D8000BFD72 /* TeachersViewController.swift */,
+				30067A9928E33108009BC502 /* TeachersService.swift */,
+				30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */,
 			);
 			path = Teachers;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30067A9A28E33108009BC502 /* TeachersService.swift in Sources */,
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
@@ -205,6 +212,7 @@
 				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
+				30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
