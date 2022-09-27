@@ -2,7 +2,7 @@
 
 ## design
 
-use Apple-like iOS apps style. figma file link: @link
+use Apple-like iOS apps style. figma file link: https://www.figma.com/file/jkZ7kJ5UVTZx3rEULkGBDJ/fictadvisor-iOS?node-id=17%3A4
 
 ## techical stack 
 - iOS 15 target 
