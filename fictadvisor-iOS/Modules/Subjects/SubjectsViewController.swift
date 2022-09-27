@@ -40,12 +40,13 @@ class SubjectsViewController: UIViewController {
     private var subjects = Subjects()
     
     private let service: SubjectsServiceTarget
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 }
 
 private extension SubjectsViewController {
     func configureViewController() {
-        title = "Teachers"
+        title = "Subjects"
+        tabBarItem.image = UIImage(systemName: "book.closed.fill")!
     }
     
     func configureTableView() {
