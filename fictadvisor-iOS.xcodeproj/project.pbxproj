@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
-		3EAF683228E2F8E1000BFD72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF683128E2F8E1000BFD72 /* SceneDelegate.swift */; };
-		3EAF683428E2F8E1000BFD72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF683328E2F8E1000BFD72 /* ViewController.swift */; };
-		3EAF683728E2F8E1000BFD72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683528E2F8E1000BFD72 /* Main.storyboard */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +15,6 @@
 /* Begin PBXFileReference section */
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3EAF683128E2F8E1000BFD72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EAF683328E2F8E1000BFD72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3EAF683628E2F8E1000BFD72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EAF683B28E2F8E3000BFD72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EAF683D28E2F8E3000BFD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */,
-				3EAF683128E2F8E1000BFD72 /* SceneDelegate.swift */,
-				3EAF683328E2F8E1000BFD72 /* ViewController.swift */,
-				3EAF683528E2F8E1000BFD72 /* Main.storyboard */,
 				3EAF683828E2F8E3000BFD72 /* Assets.xcassets */,
 				3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */,
 				3EAF683D28E2F8E3000BFD72 /* Info.plist */,
@@ -127,7 +118,6 @@
 			files = (
 				3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */,
 				3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */,
-				3EAF683728E2F8E1000BFD72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +128,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EAF683428E2F8E1000BFD72 /* ViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
-				3EAF683228E2F8E1000BFD72 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EAF683528E2F8E1000BFD72 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EAF683628E2F8E1000BFD72 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,9 +274,9 @@
 				INFOPLIST_FILE = "fictadvisor-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,9 +302,9 @@
 				INFOPLIST_FILE = "fictadvisor-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
