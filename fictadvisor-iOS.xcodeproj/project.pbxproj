@@ -10,6 +10,7 @@
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
+		3EAF684828E302EA000BFD72 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF684728E302EA000BFD72 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EAF683B28E2F8E3000BFD72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EAF683D28E2F8E3000BFD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EAF684728E302EA000BFD72 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		3EAF682E28E2F8E1000BFD72 /* fictadvisor-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3EAF684628E302E0000BFD72 /* Networking */,
 				3EAF684328E300EF000BFD72 /* Modules */,
 				3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */,
 				3EAF683828E2F8E3000BFD72 /* Assets.xcassets */,
@@ -80,6 +83,14 @@
 			children = (
 			);
 			path = Teachers;
+			sourceTree = "<group>";
+		};
+		3EAF684628E302E0000BFD72 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3EAF684728E302EA000BFD72 /* API.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
