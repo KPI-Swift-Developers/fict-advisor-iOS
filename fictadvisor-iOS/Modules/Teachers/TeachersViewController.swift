@@ -30,7 +30,6 @@ class TeachersViewController: UIViewController {
         
         service.getTeachers(page: 0, completion: {[weak self] _teachers in
             self?.displayTeachers(_teachers)
-            print(_teachers)
         }, errorCompletition: nil)
     }
     

@@ -32,7 +32,6 @@ extension TeachersService: TeachersServiceTarget {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         AF.request(linkString(page: 0), method: .get).responseDecodable(of: APIArrayData<Teacher>.self, decoder: decoder) { (response) in
             if response.response?.statusCode == 200, let value = response.value {
-                print(value.items)
                 completion(value.items)
             }
         }
