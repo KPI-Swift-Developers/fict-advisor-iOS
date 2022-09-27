@@ -20,7 +20,6 @@ class TabBarViewController: UITabBarController {
         vc2.title = "2"
         
         setViewControllers([vc1, vc2], animated: false)
-        
     }
     
     required init?(coder: NSCoder) {
