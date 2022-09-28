@@ -48,13 +48,20 @@ class SubjectsViewController: UIViewController {
 
 private extension SubjectsViewController {
     @objc func didTapEditButton(sender: AnyObject) {
-
+        let alert = UIAlertController(
+            title: "Тип сортування",
+            message: "Выберите один",
+            preferredStyle: .actionSheet
+        )
+        alert.addAction(
+            UIAlertAction(title: "За рейтингом", style: .default, handler: nil)
+        )
+        alert.addAction(
+            UIAlertAction(title: "По имени", style: .default, handler: nil)
+        )
+        present(alert, animated: true, completion: nil)
     }
 
-    @objc func didTapSearchButton(sender: AnyObject) {
-
-    }
-    
     func configureViewController() {
         title = "Subjects"
         tabBarItem.image = UIImage(systemName: "book.closed.fill")!
@@ -75,19 +82,13 @@ private extension SubjectsViewController {
     }
     
     func configureButtons() {
-        let editImage = UIImage(systemName: "arrow.up.arrow.down.circle")!
-        let searchImage = UIImage(systemName: "plus")!
+        let editImage = UIImage(systemName: "arrow.up.arrow.down")!
         let editButton = UIBarButtonItem(
             image: editImage,
             style: .plain,
             target: self,
             action: #selector(didTapEditButton))
-        let searchButton = UIBarButtonItem(
-            image: searchImage,
-            style: .plain,
-            target: self,
-            action: #selector(didTapSearchButton))
-        navigationItem.rightBarButtonItems = [editButton, searchButton]
+        navigationItem.rightBarButtonItems = [editButton]
     }
     
     func configureSearchVC() {
