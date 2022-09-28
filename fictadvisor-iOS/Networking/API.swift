@@ -21,5 +21,5 @@ struct SortingType {
     let urlName: String
     
     static let byName = SortingType(urlName: "name")
-    static let byRate = SortingType(urlName: "rate")
+    static let byRate = SortingType(urlName: "rating")
 }
