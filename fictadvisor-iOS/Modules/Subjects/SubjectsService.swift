@@ -14,34 +14,36 @@ struct Subject: Codable {
     let name: String
     let description: String?
     let teacherCount: String
-    let rating: Int
+    let rating: Float
 }
 typealias Subjects = [Subject]
 
 protocol SubjectsServiceTarget {
     func getSubjects(
         page: Int,
+        sort: SortingType,
         completion: @escaping (Subjects) -> Void,
         errorCompletion: ((Error) -> Void)?
     )
 }
 
 class SubjectsService: RestService {
-    private func linkString(page: Int) -> String {
-        return baseURL + "subjects?page=\(page)&page_size=\(standardPages)"
+    private func linkString(page: Int, sort: SortingType) -> String {
+        return baseURL + "subjects?page=\(page)&page_size=\(standardPages)&sort=\(sort.urlName)"
     }
 }
 
 extension SubjectsService: SubjectsServiceTarget {
     func getSubjects(
         page: Int,
+        sort: SortingType = .byName,
         completion: @escaping (Subjects) -> Void,
         errorCompletion: ((Error) -> Void)?
     ) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         AF.request(
-            linkString(page: 0),
+            linkString(page: 0, sort: sort),
             method: .get
         ).responseDecodable(
             of: APIArrayData<Subject>.self,

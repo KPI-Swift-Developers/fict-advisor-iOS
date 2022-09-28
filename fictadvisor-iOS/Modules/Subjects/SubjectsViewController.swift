@@ -28,6 +28,7 @@ class SubjectsViewController: UIViewController {
         
         service.getSubjects(
             page: 0,
+            sort: sortingType,
             completion: {
                 [unowned self] _subjects in
                 displaySubjects(_subjects)
@@ -40,6 +41,7 @@ class SubjectsViewController: UIViewController {
 
     private var isAppeared = false
     private var subjects = Subjects()
+    private var sortingType: SortingType = .byName
     
     private let service: SubjectsServiceTarget
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -48,11 +50,21 @@ class SubjectsViewController: UIViewController {
 
 private extension SubjectsViewController {
     func byRateButtonDidTap(_ action: UIAlertAction) {
+        sortingType = .byRate
         
+        service.getSubjects(page: 0, sort: sortingType, completion: {
+            [weak self] _sub in
+            self?.displaySubjects(_sub)
+        }, errorCompletion: nil)
     }
     
     func byNameButtonDidTap(_ action: UIAlertAction) {
+        sortingType = .byName
         
+        service.getSubjects(page: 0, sort: sortingType, completion: {
+            [weak self] _sub in
+            self?.displaySubjects(_sub)
+        }, errorCompletion: nil)
     }
     
     @objc func didTapSortButton(sender: AnyObject) {
