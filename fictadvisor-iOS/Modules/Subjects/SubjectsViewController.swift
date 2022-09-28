@@ -142,4 +142,32 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = subjects[indexPath.row].name
         return cell
     }
+    
+    func tableView(
+        _ tableView: UITableView,
+        viewForFooterInSection section: Int
+    ) -> UIView? {
+        let footer = UIView()
+        let button = UIButton()
+        
+        footer.addSubview(button)
+        button.snp.makeConstraints() {
+            $0.top.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.left.right.equalToSuperview()
+        }
+        
+        button.backgroundColor = .white
+        button.setTitle("Load more", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.layer.cornerRadius = 10
+        return footer
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        heightForFooterInSection section: Int
+    ) -> CGFloat {
+        return 65
+    }
 }
