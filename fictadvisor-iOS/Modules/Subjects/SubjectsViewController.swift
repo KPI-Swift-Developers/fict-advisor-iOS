@@ -47,18 +47,16 @@ class SubjectsViewController: UIViewController {
 }
 
 private extension SubjectsViewController {
-    @objc func didTapEditButton(sender: AnyObject) {
+    @objc func didTapSortButton(sender: AnyObject) {
         let alert = UIAlertController(
             title: "Тип сортування",
             message: "Выберите один",
             preferredStyle: .actionSheet
         )
         alert.addAction(
-            UIAlertAction(title: "За рейтингом", style: .default, handler: nil)
-        )
+            UIAlertAction(title: "За рейтингом", style: .default, handler: nil))
         alert.addAction(
-            UIAlertAction(title: "По имени", style: .default, handler: nil)
-        )
+            UIAlertAction(title: "По имени", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
@@ -82,13 +80,13 @@ private extension SubjectsViewController {
     }
     
     func configureButtons() {
-        let editImage = UIImage(systemName: "arrow.up.arrow.down")!
-        let editButton = UIBarButtonItem(
-            image: editImage,
+        let sortImage = UIImage(systemName: "arrow.up.arrow.down")!
+        let sortButton = UIBarButtonItem(
+            image: sortImage,
             style: .plain,
             target: self,
-            action: #selector(didTapEditButton))
-        navigationItem.rightBarButtonItems = [editButton]
+            action: #selector(didTapSortButton))
+        navigationItem.rightBarButtonItems = [sortButton]
     }
     
     func configureSearchVC() {
