@@ -11,9 +11,14 @@ class TeachersViewController: UIViewController {
     
     private let service: TeachersServiceTarget
     private var teachers = Teachers()
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     
+    private var searchController = UISearchController()
+    private var sortingType: SortingType = .byName
     private var isAppeared = false
+    
+    private var filteredTeachers = Teachers()
+    private var page = 0
     
     init(service: TeachersServiceTarget) {
         self.service = service
@@ -27,15 +32,79 @@ class TeachersViewController: UIViewController {
         if isAppeared { return }
         isAppeared = true
         
-        service.getTeachers(page: 0, completion: { [weak self] _teachers in
+        service.getTeachers(page: 0, sort: sortingType, completion: { [weak self] _teachers in
             self?.displayTeachers(_teachers)
         }, errorCompletition: nil)
+        setupSearchController()
+        configureButtons()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+private extension TeachersViewController {
+    func configureButtons() {
+        let sortImage = UIImage(systemName: "arrow.up.arrow.down")!
+        let sortButton = UIBarButtonItem(
+            image: sortImage,
+            style: .plain,
+            target: self,
+            action: #selector(didTapSortButton))
+        navigationItem.rightBarButtonItems = [sortButton]
+    }
+    
+    @objc func didTapSortButton() {
+        let alert = UIAlertController(
+            title: "Тип сортування",
+            message: "Виберіть один",
+            preferredStyle: .actionSheet
+        )
+        
+        alert.addAction(UIAlertAction(title: "За ім'ям",
+                                      style: .default, handler: byNameButtonDidTap))
+        alert.addAction(UIAlertAction(title: "За рейтингом",
+                                      style: .default, handler: byRatingButtonDidTap))
+        alert.addAction(UIAlertAction(title: "Відміна",
+                                      style: .cancel))
+        
+        present(alert, animated: true)
+    }
+    
+    func byNameButtonDidTap(_ action: UIAlertAction) {
+        sortingType = .byName
+        
+        service.getTeachers(page: 0, sort: sortingType, completion: {[weak self] _teachers in
+            self?.displayTeachers(_teachers)
+        }, errorCompletition: nil)
+    }
+    
+    func byRatingButtonDidTap(_ action: UIAlertAction) {
+        sortingType = .byRate
+        
+        service.getTeachers(page: page, sort: sortingType, completion: {[weak self] _teachers in
+            self?.displayTeachers(_teachers)
+        }, errorCompletition: nil)
+    }
+    
+    @objc func loadMoreButtonDidTap() {
+        page += 1
+        print(page)
+        service.getTeachers(page: page, sort: sortingType, completion: {[weak self] _teachers in
+            self?.displayTeachers(_teachers)
+        }, errorCompletition: nil)
+    }
+}
+
+private extension TeachersViewController {
+    func setupSearchController() {
+        navigationItem.searchController = searchController
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
 
 private extension TeachersViewController {
     func displayTeachers(_ teachers: Teachers) {
@@ -47,6 +116,7 @@ private extension TeachersViewController {
 private extension TeachersViewController {
     func configureViewController() {
         title = "Subjects"
+        searchController.searchResultsUpdater = self
     }
     
     func configureTableView() {
@@ -82,6 +152,45 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.nameLabel.text = nameString
         cell.ratingLabel.text = "Рейтинг: " + String(teacher.rating)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = UIView()
+        let button = UIButton()
+        
+        footer.addSubview(button)
+        button.snp.makeConstraints() {
+            $0.top.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.left.right.equalToSuperview()
+        }
+        
+        button.backgroundColor = .white
+        button.setTitle("Завантажити більше", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(loadMoreButtonDidTap), for: .touchUpInside)
+        
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 65
+    }
+    
+}
+
+extension TeachersViewController: UISearchResultsUpdating {
+    // Bug if typo in search
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
+         filteredTeachers = teachers.filter { teachers in
+            teachers.firstName.contains(text)
+        }
+        if !searchController.isActive {
+            displayTeachers(teachers)
+        }
+        displayTeachers(filteredTeachers)
     }
 }
 

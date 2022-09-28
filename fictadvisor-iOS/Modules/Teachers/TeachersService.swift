@@ -17,20 +17,20 @@ struct Teacher: Codable {
 typealias Teachers = [Teacher]
 
 protocol TeachersServiceTarget {
-    func getTeachers(page: Int, completion: @escaping(Teachers) -> Void, errorCompletition: ((Error) -> Void)?)
+    func getTeachers(page: Int, sort: SortingType,completion: @escaping(Teachers) -> Void, errorCompletition: ((Error) -> Void)?)
 }
 
 class TeachersService: RestService {
-    private func linkString(page: Int) -> String {
-        return baseURL + "teachers?page=\(page)&page_size=\(standardPages)"
+    private func linkString(page: Int, sort: SortingType) -> String {
+        return baseURL + "teachers?page=\(page)&page_size=\(standardPages)&sort=\(sort.urlName)"
     }
 }
 
 extension TeachersService: TeachersServiceTarget {
-    func getTeachers(page: Int, completion: @escaping (Teachers) -> Void, errorCompletition: ((Error) -> Void)?) {
+    func getTeachers(page: Int, sort: SortingType ,completion: @escaping (Teachers) -> Void, errorCompletition: ((Error) -> Void)?) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        AF.request(linkString(page: 0), method: .get).responseDecodable(of: APIArrayData<Teacher>.self, decoder: decoder) { (response) in
+        AF.request(linkString(page: page, sort: sort), method: .get).responseDecodable(of: APIArrayData<Teacher>.self, decoder: decoder) { (response) in
             if response.response?.statusCode == 200, let value = response.value {
                 completion(value.items)
             }
