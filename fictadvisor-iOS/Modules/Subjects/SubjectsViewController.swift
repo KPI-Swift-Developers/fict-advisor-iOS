@@ -47,16 +47,25 @@ class SubjectsViewController: UIViewController {
 }
 
 private extension SubjectsViewController {
+    func byRateButtonDidTap(_ action: UIAlertAction) {
+        
+    }
+    
+    func byNameButtonDidTap(_ action: UIAlertAction) {
+        
+    }
+    
     @objc func didTapSortButton(sender: AnyObject) {
         let alert = UIAlertController(
             title: "Тип сортування",
             message: "Выберите один",
             preferredStyle: .actionSheet
         )
+        
         alert.addAction(
-            UIAlertAction(title: "За рейтингом", style: .default, handler: nil))
+            UIAlertAction(title: "За рейтингом", style: .default, handler: byRateButtonDidTap))
         alert.addAction(
-            UIAlertAction(title: "По имени", style: .default, handler: nil))
+            UIAlertAction(title: "По имени", style: .default, handler: byNameButtonDidTap))
         present(alert, animated: true, completion: nil)
     }
 
