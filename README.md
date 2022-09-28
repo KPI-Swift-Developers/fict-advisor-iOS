@@ -24,8 +24,8 @@ https://github.com/fictadvisor/fictadvisor-api
 ## programm parts 
 - main page
 - settings 
-- teachers 
-- subjects
+- teachers (s)
+- subjects (j)
 - superheroes
 - help
 - telegram auth
