@@ -4,6 +4,13 @@
 
 use Apple-like iOS apps style. figma file link: https://www.figma.com/file/jkZ7kJ5UVTZx3rEULkGBDJ/fictadvisor-iOS?node-id=17%3A4
 
+## api 
+use official fictadvisor public api 
+
+https://github.com/fictadvisor/documentation/tree/master/postman
+
+https://github.com/fictadvisor/fictadvisor-api
+
 ## techical stack 
 - iOS 15 target 
 - UIKit (in code) + SwiftUI (in lightweight tasks)
