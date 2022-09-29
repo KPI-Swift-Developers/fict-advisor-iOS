@@ -10,11 +10,14 @@ import SnapKit
 
 class SubjectsViewController: UIViewController {
     
-    init(service: SubjectsServiceTarget) {
+    init(service: SubjectsServiceTarget, paging: PagingSubjectsService) {
         self.service = service
+        self.paging = paging 
         super.init(nibName: nil, bundle: nil)
         configureTableView()
         configureViewController()
+        
+        searchVC.searchResultsUpdater = self
     }
     
     required init?(coder: NSCoder) {
@@ -43,6 +46,9 @@ class SubjectsViewController: UIViewController {
     private var subjects = Subjects()
     private var sortingType: SortingType = .byName
     
+    private var storedSubjects = Subjects()
+    
+    private let paging: PagingSubjectsService
     private let service: SubjectsServiceTarget
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let searchVC = UISearchController()
@@ -52,19 +58,29 @@ private extension SubjectsViewController {
     func byRateButtonDidTap(_ action: UIAlertAction) {
         sortingType = .byRate
         
-        service.getSubjects(page: 0, sort: sortingType, completion: {
-            [weak self] _sub in
-            self?.displaySubjects(_sub)
-        }, errorCompletion: nil)
+        service.getSubjects(
+            page: 0,
+            sort: sortingType,
+            completion: {
+                [weak self] _sub in
+                self?.displaySubjects(_sub)
+            }, errorCompletion: nil)
+        
+        paging.clearPage()
     }
     
     func byNameButtonDidTap(_ action: UIAlertAction) {
         sortingType = .byName
         
-        service.getSubjects(page: 0, sort: sortingType, completion: {
-            [weak self] _sub in
-            self?.displaySubjects(_sub)
-        }, errorCompletion: nil)
+        service.getSubjects(
+            page: paging.page,
+            sort: sortingType,
+            completion: {
+                [weak self] _sub in
+                self?.displaySubjects(_sub)
+            }, errorCompletion: nil)
+        
+        paging.clearPage()
     }
     
     @objc func didTapSortButton(sender: AnyObject) {
@@ -120,6 +136,7 @@ private extension SubjectsViewController {
 private extension SubjectsViewController {
     func displaySubjects(_ subjects: Subjects) {
         self.subjects = subjects
+        self.storedSubjects = subjects
         tableView.reloadData()
     }
 }
@@ -161,7 +178,20 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         button.setTitle("Load more", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(showMoreButton), for: .touchUpInside)
         return footer
+    }
+    
+    @objc func showMoreButton() {
+        paging.pagedSubjects(
+            sort: sortingType,
+            completion: {
+                [weak self] subs in
+                guard let self = self else { return }
+                self.subjects.append(contentsOf: subs)
+                self.displaySubjects(self.subjects)
+            },
+            errorCompletion: nil)
     }
     
     func tableView(
@@ -169,5 +199,32 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         heightForFooterInSection section: Int
     ) -> CGFloat {
         return 65
+    }
+}
+
+extension SubjectsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard
+            let string = searchController.searchBar.text
+        else {
+            return
+        }
+        
+        let filteredSubs = storedSubjects.filter {
+            $0.name
+                .lowercased()
+                .contains(
+                    string.lowercased()
+                )
+        }
+        
+        if string.isEmpty {
+            subjects = storedSubjects
+            tableView.reloadData()
+            return
+        }
+        
+        subjects = filteredSubs
+        tableView.reloadData()
     }
 }

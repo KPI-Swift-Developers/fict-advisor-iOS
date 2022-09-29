@@ -10,7 +10,7 @@ import Foundation
 extension SubjectsViewController {
     static var module: SubjectsViewController {
         let service = SubjectsService()
-        let vc = SubjectsViewController(service: service)
+        let vc = SubjectsViewController(service: service, paging: service)
         return vc
     }
 }
