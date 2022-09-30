@@ -13,8 +13,8 @@ class CoreViewController: UIViewController {
     private let largeNavigation: Bool
     
     init(
-        buttonImage1: UIImage? = UIImage(systemName: ""),
-        buttonImage2: UIImage? = UIImage(systemName: ""),
+        buttonImage1: UIImage? = UIImage(systemName: "arrow.up.arrow.down"),
+        buttonImage2: UIImage? = UIImage(systemName: "plus"),
         largeNavigation: Bool = true
     ) {
         self.largeNavigation = largeNavigation
