@@ -11,6 +11,9 @@ https://github.com/fictadvisor/documentation/tree/master/postman
 
 https://github.com/fictadvisor/fictadvisor-api
 
+telegram auth 
+https://core.telegram.org/widgets/login
+
 ## techical stack 
 - iOS 15 target 
 - UIKit (in code) + SwiftUI (in lightweight tasks)
