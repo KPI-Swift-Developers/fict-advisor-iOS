@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
+		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
 		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
 		30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
 		30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E488EA728E705B900C05803 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3E488EA828E705CC00C05803 /* CoreViewController.swift */,
+				3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		3EAF682328E2F8E1000BFD72 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 		3EAF682E28E2F8E1000BFD72 /* fictadvisor-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3E488EA728E705B900C05803 /* Core */,
 				3EAF684628E302E0000BFD72 /* Networking */,
 				3EAF684328E300EF000BFD72 /* Modules */,
 				3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */,
@@ -212,9 +226,11 @@
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
+				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
 				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
+				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
 				30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */,
 			);
