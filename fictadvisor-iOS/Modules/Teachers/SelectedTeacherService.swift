@@ -57,10 +57,10 @@ extension SelectedTeacherService: OneTeacherServiceTarget {
     func getTeacher(teacher: String, completion: @escaping (OneTeacher) -> Void, errorCompletion: ((Error) -> Void)?) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        AF.request(linkString(teacher: teacher), method: .get).responseDecodable(of: APIArrayData<OneTeacher>.self, decoder: decoder) { (response) in
+        AF.request(linkString(teacher: teacher), method: .get).responseDecodable(of: OneTeacher.self, decoder: decoder) { (response) in
             if response.response?.statusCode == 200, let value = response.value {
-                //Because api gives not array but one teacher we use first!
-                completion(value.items.first!)
+                
+                completion(value)
             }
         }
     }

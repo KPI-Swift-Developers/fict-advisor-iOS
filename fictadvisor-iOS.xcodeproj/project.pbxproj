@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
-		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
 		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
 		30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */; };
+		30E05B8D28E719C7006B3C04 /* SelectedTeacherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */; };
+		30E05B8E28E719C7006B3C04 /* SelectedTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */; };
+		30E05B8F28E719C7006B3C04 /* SelectedTeacherViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */; };
+		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
+		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
@@ -26,11 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
-		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
 		30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewCell.swift; sourceTree = "<group>"; };
+		30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTeacherService.swift; sourceTree = "<group>"; };
+		30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTeacherViewController.swift; sourceTree = "<group>"; };
+		30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectedTeacherViewController+Module.swift"; sourceTree = "<group>"; };
+		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 		3EAF684528E300FB000BFD72 /* Teachers */ = {
 			isa = PBXGroup;
 			children = (
+				30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */,
+				30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */,
+				30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */,
 				3EAF685128E304D8000BFD72 /* TeachersViewController.swift */,
 				30067A9928E33108009BC502 /* TeachersService.swift */,
 				30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */,
@@ -227,9 +236,12 @@
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
 				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
+				30E05B8D28E719C7006B3C04 /* SelectedTeacherService.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
 				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
+				30E05B8F28E719C7006B3C04 /* SelectedTeacherViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
+				30E05B8E28E719C7006B3C04 /* SelectedTeacherViewController.swift in Sources */,
 				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
 				30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */,

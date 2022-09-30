@@ -10,7 +10,11 @@ import UIKit
 class SelectedTeacherViewController: UIViewController {
     
     private let service: SelectedTeacherService
-    private var teacher: OneTeacher!
+    private var teacher: OneTeacher! {
+        didSet {
+            print (teacher)
+        }
+    }
     
     init (service: SelectedTeacherService) {
         self.service = service
@@ -25,6 +29,5 @@ class SelectedTeacherViewController: UIViewController {
         service.getTeacher(teacher: "sirota-olena-petrivna", completion: { [weak self] (_teacher) in
             self?.teacher = _teacher
         }, errorCompletion: nil)
-        
     }
 }
