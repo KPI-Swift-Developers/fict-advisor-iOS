@@ -8,27 +8,25 @@
 import UIKit
 import SnapKit
 
-class SubjectsViewController: UIViewController {
+class SubjectsViewController: SearchCoreViewController {
     
     init(service: SubjectsServiceTarget, paging: PagingSubjectsService) {
         self.service = service
-        self.paging = paging 
-        super.init(nibName: nil, bundle: nil)
+        self.paging = paging
+        super.init(
+            buttonImage1: UIImage(systemName: "arrow.up.arrow.down"),
+            buttonImage2: nil,
+            largeNavigation: true)
         configureTableView()
         configureViewController()
-        
-        searchVC.searchResultsUpdater = self
     }
     
     required init?(coder: NSCoder) {
         fatalError()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if isAppeared { return }
-        isAppeared = false
-        
+    override func viewDidCreated() {
+        super.viewDidCreated()
         service.getSubjects(
             page: 0,
             sort: sortingType,
@@ -37,21 +35,55 @@ class SubjectsViewController: UIViewController {
                 displaySubjects(_subjects)
             },
             errorCompletion: nil)
+    }
+    
+    override func didTapNavigationButton1() {
+        let alert = UIAlertController(
+            title: "Тип сортування",
+            message: "Выберите один",
+            preferredStyle: .actionSheet
+        )
         
-        configureSearchVC()
-        configureButtons()
+        alert.addAction(
+            UIAlertAction(title: "За рейтингом", style: .default, handler: byRateButtonDidTap))
+        alert.addAction(
+            UIAlertAction(title: "По имени", style: .default, handler: byNameButtonDidTap))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    override func didEnterTextIn(_ searchBarViewController: UISearchController) {
+        guard
+            let string = searchBarViewController.searchBar.text
+        else {
+            return
+        }
+        
+        let filteredSubs = storedSubjects.filter {
+            $0.name
+                .lowercased()
+                .contains(
+                    string.lowercased()
+                )
+        }
+        
+        if string.isEmpty {
+            subjects = storedSubjects
+            tableView.reloadData()
+            return
+        }
+        
+        subjects = filteredSubs
+        tableView.reloadData()
     }
 
-    private var isAppeared = false
     private var subjects = Subjects()
     private var sortingType: SortingType = .byName
-    
     private var storedSubjects = Subjects()
     
     private let paging: PagingSubjectsService
     private let service: SubjectsServiceTarget
+    
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private let searchVC = UISearchController()
 }
 
 private extension SubjectsViewController {
@@ -82,20 +114,6 @@ private extension SubjectsViewController {
         
         paging.clearPage()
     }
-    
-    @objc func didTapSortButton(sender: AnyObject) {
-        let alert = UIAlertController(
-            title: "Тип сортування",
-            message: "Выберите один",
-            preferredStyle: .actionSheet
-        )
-        
-        alert.addAction(
-            UIAlertAction(title: "За рейтингом", style: .default, handler: byRateButtonDidTap))
-        alert.addAction(
-            UIAlertAction(title: "По имени", style: .default, handler: byNameButtonDidTap))
-        present(alert, animated: true, completion: nil)
-    }
 
     func configureViewController() {
         title = "Subjects"
@@ -114,22 +132,6 @@ private extension SubjectsViewController {
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: "cell")
-    }
-    
-    func configureButtons() {
-        let sortImage = UIImage(systemName: "arrow.up.arrow.down")!
-        let sortButton = UIBarButtonItem(
-            image: sortImage,
-            style: .plain,
-            target: self,
-            action: #selector(didTapSortButton))
-        navigationItem.rightBarButtonItems = [sortButton]
-    }
-    
-    func configureSearchVC() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searchVC
-        searchVC.hidesNavigationBarDuringPresentation = false
     }
 }
 
@@ -199,32 +201,5 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         heightForFooterInSection section: Int
     ) -> CGFloat {
         return 65
-    }
-}
-
-extension SubjectsViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard
-            let string = searchController.searchBar.text
-        else {
-            return
-        }
-        
-        let filteredSubs = storedSubjects.filter {
-            $0.name
-                .lowercased()
-                .contains(
-                    string.lowercased()
-                )
-        }
-        
-        if string.isEmpty {
-            subjects = storedSubjects
-            tableView.reloadData()
-            return
-        }
-        
-        subjects = filteredSubs
-        tableView.reloadData()
     }
 }
