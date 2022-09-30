@@ -181,6 +181,10 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         return 65
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(SelectedTeacherViewController.module, animated: true)
+    }
+    
 }
 
 extension TeachersViewController: UISearchResultsUpdating {
