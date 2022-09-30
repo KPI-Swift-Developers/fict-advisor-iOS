@@ -17,7 +17,7 @@ class TeachersViewController: UIViewController {
     private var sortingType: SortingType = .byName
     private var isAppeared = false
     
-    private var filteredTeachers = Teachers()
+    private var storedTeachers = Teachers()
     private var page = 0
     
     init(service: TeachersServiceTarget) {
@@ -92,7 +92,9 @@ private extension TeachersViewController {
         page += 1
         print(page)
         service.getTeachers(page: page, sort: sortingType, completion: {[weak self] _teachers in
-            self?.displayTeachers(_teachers)
+            self?.teachers.append(contentsOf: _teachers)
+            self?.storedTeachers.append(contentsOf: _teachers)
+            self?.tableView.reloadData()
         }, errorCompletition: nil)
     }
 }
@@ -109,6 +111,7 @@ private extension TeachersViewController {
 private extension TeachersViewController {
     func displayTeachers(_ teachers: Teachers) {
         self.teachers = teachers
+        self.storedTeachers = teachers
         tableView.reloadData()
     }
 }
@@ -181,16 +184,21 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension TeachersViewController: UISearchResultsUpdating {
-    // Bug if typo in search
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text, !text.isEmpty else { return }
-         filteredTeachers = teachers.filter { teachers in
-            teachers.firstName.contains(text)
+        let filteredTeachers = storedTeachers.filter {
+            $0.firstName
+                .lowercased()
+                .contains(
+                    text.lowercased()
+                )
         }
         if !searchController.isActive {
-            displayTeachers(teachers)
+            teachers = storedTeachers
+            tableView.reloadData()
         }
-        displayTeachers(filteredTeachers)
+        teachers = filteredTeachers
+        tableView.reloadData()
     }
 }
 
