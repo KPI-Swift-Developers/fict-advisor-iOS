@@ -57,7 +57,7 @@ private extension SelectedTeacherViewController {
         if segmenedControl.selectedSegmentIndex == 0 {
             print(segmenedControl.selectedSegmentIndex)
         } else if segmenedControl.selectedSegmentIndex == 1 {
-            containerViewController = RewiewsViewController()
+            containerViewController = ReviewsViewController.module
             view.addSubview(containerViewController.view)
             self.addChild(containerViewController)
             containerViewController.didMove(toParent: self)
