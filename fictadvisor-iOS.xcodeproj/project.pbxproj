@@ -20,6 +20,7 @@
 		3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685928E30589000BFD72 /* Alamofire */; };
 		3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685B28E316E5000BFD72 /* SubjectsService.swift */; };
 		3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */; };
+		3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
 		3EAF685B28E316E5000BFD72 /* SubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsService.swift; sourceTree = "<group>"; };
 		3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectViewController+Module.swift"; sourceTree = "<group>"; };
+		3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSubjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		3EAF684428E300F6000BFD72 /* Subjects */ = {
 			isa = PBXGroup;
 			children = (
+				3ED4AEEF28ECCD69009A1E80 /* OneSubject */,
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
 				3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */,
 				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
@@ -132,6 +135,14 @@
 				3EAF684F28E303B9000BFD72 /* TabBarViewController.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		3ED4AEEF28ECCD69009A1E80 /* OneSubject */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */,
+			);
+			path = OneSubject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
+				3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
 				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
