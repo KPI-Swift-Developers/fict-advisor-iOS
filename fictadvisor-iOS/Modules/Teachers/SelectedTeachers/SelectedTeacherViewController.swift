@@ -31,9 +31,7 @@ class SelectedTeacherViewController: SearchCoreViewController {
     override func viewDidCreated() {
         super.viewDidCreated()
         view.backgroundColor = .systemBackground
-        
         setupView()
-        
         service.getTeacher(teacher: "sirota-olena-petrivna", completion: { [weak self] (_teacher) in
             self?.teacher = _teacher
         }, errorCompletion: nil)
@@ -55,15 +53,20 @@ private extension SelectedTeacherViewController {
     }
     @objc private func segmentedControllDidTap() {
         if segmenedControl.selectedSegmentIndex == 0 {
-            print(segmenedControl.selectedSegmentIndex)
+            
         } else if segmenedControl.selectedSegmentIndex == 1 {
+            view.subviews.forEach({ $0.removeFromSuperview() })
             containerViewController = ReviewsViewController.module
             view.addSubview(containerViewController.view)
             self.addChild(containerViewController)
             containerViewController.didMove(toParent: self)
-            setupConstraints()
         } else {
-            print(segmenedControl.selectedSegmentIndex)
+            view.subviews.forEach({ $0.removeFromSuperview() })
+            containerViewController = TeacherContactsViewController()
+            view.addSubview(containerViewController.view)
+            self.addChild(containerViewController)
+            containerViewController.didMove(toParent: self)
         }
+        setupConstraints()
     }
 }

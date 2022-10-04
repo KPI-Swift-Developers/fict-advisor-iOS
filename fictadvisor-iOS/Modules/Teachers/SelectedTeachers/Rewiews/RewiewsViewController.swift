@@ -12,6 +12,7 @@ class ReviewsViewController: SearchCoreViewController {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let service: ReviewsServiceTarget
     private var reviews = Reviews()
+    let teacherToShow = String()
     
     init (service: ReviewsServiceTarget) {
         self.service = service

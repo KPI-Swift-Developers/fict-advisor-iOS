@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3000691128ECE8B90026E1C1 /* TeacherContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */; };
+		3000691328ECE8DC0026E1C1 /* TeacherContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */; };
+		3000691628ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */; };
 		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
 		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
 		30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsViewController.swift; sourceTree = "<group>"; };
+		3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsService.swift; sourceTree = "<group>"; };
+		3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsCollectionViewCell.swift; sourceTree = "<group>"; };
 		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
 		30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewCell.swift; sourceTree = "<group>"; };
@@ -71,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3000691428ECE8E60026E1C1 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */,
+				3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */,
+				3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		30DAB87C28EB20E9009B99F4 /* Rewiews */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +105,7 @@
 				30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */,
 				30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */,
 				30DAB87C28EB20E9009B99F4 /* Rewiews */,
+				3000691428ECE8E60026E1C1 /* Contacts */,
 			);
 			path = SelectedTeachers;
 			sourceTree = "<group>";
@@ -270,12 +287,15 @@
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
 				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
 				30E05B8F28E719C7006B3C04 /* SelectedTeacherViewController+Module.swift in Sources */,
+				3000691128ECE8B90026E1C1 /* TeacherContactsViewController.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
 				30DAB87B28EB20DF009B99F4 /* RewiewsService.swift in Sources */,
 				30DAB87928EB1431009B99F4 /* RewiewsViewController.swift in Sources */,
+				3000691628ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift in Sources */,
 				30E05B8E28E719C7006B3C04 /* SelectedTeacherViewController.swift in Sources */,
 				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
+				3000691328ECE8DC0026E1C1 /* TeacherContactsService.swift in Sources */,
 				30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
