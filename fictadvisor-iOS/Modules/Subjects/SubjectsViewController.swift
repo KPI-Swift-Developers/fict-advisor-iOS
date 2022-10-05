@@ -25,6 +25,11 @@ class SubjectsViewController: SearchCoreViewController {
         fatalError()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .always
+    }
+    
     override func viewDidCreated() {
         super.viewDidCreated()
         service.getSubjects(
@@ -144,6 +149,12 @@ private extension SubjectsViewController {
 }
 
 extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(
+            OneSubjectViewController.module(subject: subjects[indexPath.row]),
+            animated: true)
+    }
+    
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
