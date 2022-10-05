@@ -65,6 +65,15 @@ extension OneSubjectViewController {
 extension OneSubjectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        navigationController?.pushViewController(
+            CourseViewController(subjectName: subject.name, course: courses[indexPath.row]),
+            animated: true)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
         return courses.count
@@ -81,10 +90,11 @@ extension OneSubjectViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "cell",
+            for: indexPath)
         let course = courses[indexPath.row]
-        let teacherName = course.teacher.lastName + " " + course.teacher.firstName + " " + course.teacher.middleName
-        cell.textLabel?.text = teacherName
+        cell.textLabel?.text = course.teacher.fullTeacherName
         
         let subtitleText = "Rates count: \(course.reviewCount), avarage rate: \(course.rating)"
         cell.detailTextLabel?.text = subtitleText

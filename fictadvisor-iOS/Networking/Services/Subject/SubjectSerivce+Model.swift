@@ -23,6 +23,10 @@ struct SubjectTeacher: Codable {
     let lastName: String
     let middleName: String
     let link: String
+    
+    var fullTeacherName: String {
+        return lastName + " " + firstName + " " + middleName
+    }
 }
 typealias SubjectTeachers = [SubjectTeacher]
 
@@ -35,3 +39,12 @@ struct SubjectCourse: Codable {
     let recommended: Bool
 }
 typealias SubjectCourses = [SubjectCourse]
+
+struct CourseReview: Codable {
+    let id: String
+    let content: String
+    let rating: Float
+    let date: String
+}
+typealias CourseReviews = [CourseReview]
+

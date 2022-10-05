@@ -21,6 +21,13 @@ protocol SubjectsServiceTarget {
         sort: SortingType,
         completion: @escaping (SubjectCourses) -> Void,
         errorCompletion: ((Error) -> Void)?)
+    
+    func getCourseReviews(
+        courseLink: String,
+        page: Int,
+        sort: SortingType,
+        completion: @escaping (CourseReviews) -> Void,
+        errorCompletion: ((Error) -> Void)?)
 }
 
 protocol PagingSubjectsService {
@@ -79,6 +86,30 @@ extension SubjectsService: SubjectsServiceTarget {
             method: .get
         ).responseDecodable(
             of: APIArrayData<Subject>.self,
+            decoder: decoder
+        ) {
+            response in
+            if response.response?.statusCode == 200, let value = response.value {
+                completion(value.items)
+            }
+        }
+    }
+    
+    func getCourseReviews(
+        courseLink: String,
+        page: Int,
+        sort: SortingType,
+        completion: @escaping (CourseReviews) -> Void,
+        errorCompletion: ((Error) -> Void)? = nil
+    ) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        AF.request(
+            baseURL + "courses/\(courseLink)/reviews?page=\(page)&page_size=\(standardPages)&search=&sort=\(sort.urlName)",
+            method: .get
+        ).responseDecodable(
+            of: APIArrayData<CourseReview>.self,
             decoder: decoder
         ) {
             response in

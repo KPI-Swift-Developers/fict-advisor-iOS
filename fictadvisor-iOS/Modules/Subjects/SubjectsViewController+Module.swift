@@ -1,5 +1,5 @@
 //
-//  SubjectViewController+Module.swift
+//  SubjectsViewController+Module.swift
 //  fictadvisor-iOS
 //
 //  Created by Jeytery on 27.09.2022.

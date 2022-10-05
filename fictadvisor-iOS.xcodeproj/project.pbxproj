@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E25632028EE195E0049ACDE /* CourseViewControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */; };
+		3E25632728EE20E20049ACDE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25632628EE20E20049ACDE /* RatingView.swift */; };
+		3E25632928EE25880049ACDE /* CourseReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */; };
 		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
 		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
@@ -19,14 +22,18 @@
 		3EAF685728E3057A000BFD72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685628E3057A000BFD72 /* SnapKit */; };
 		3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685928E30589000BFD72 /* Alamofire */; };
 		3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685B28E316E5000BFD72 /* SubjectsService.swift */; };
-		3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */; };
+		3EAF685E28E318EE000BFD72 /* SubjectsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */; };
 		3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */; };
 		3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */; };
 		3ED4AEFA28ED9817009A1E80 /* SubjectSerivce+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */; };
 		3ED4AEFC28EDB3C7009A1E80 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */; };
+		3ED4AEFF28EDF896009A1E80 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewControllerHeader.swift; sourceTree = "<group>"; };
+		3E25632628EE20E20049ACDE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewTableViewCell.swift; sourceTree = "<group>"; };
 		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
 		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,11 +46,12 @@
 		3EAF685128E304D8000BFD72 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
 		3EAF685B28E316E5000BFD72 /* SubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsService.swift; sourceTree = "<group>"; };
-		3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectViewController+Module.swift"; sourceTree = "<group>"; };
+		3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectsViewController+Module.swift"; sourceTree = "<group>"; };
 		3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSubjectViewController.swift; sourceTree = "<group>"; };
 		3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableView.swift; sourceTree = "<group>"; };
 		3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectSerivce+Model.swift"; sourceTree = "<group>"; };
 		3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E25632128EE19E80049ACDE /* Extension  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extension ";
+			sourceTree = "<group>";
+		};
 		3E488EA728E705B900C05803 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3E25632128EE19E80049ACDE /* Extension  */,
 				3E488EA828E705CC00C05803 /* CoreViewController.swift */,
 				3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */,
 				3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */,
 				3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */,
+				3E25632628EE20E20049ACDE /* RatingView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -113,9 +130,10 @@
 		3EAF684428E300F6000BFD72 /* Subjects */ = {
 			isa = PBXGroup;
 			children = (
+				3ED4AEFD28EDF859009A1E80 /* Course */,
 				3ED4AEEF28ECCD69009A1E80 /* OneSubject */,
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
-				3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */,
+				3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
@@ -168,6 +186,16 @@
 				3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */,
 			);
 			path = Subject;
+			sourceTree = "<group>";
+		};
+		3ED4AEFD28EDF859009A1E80 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */,
+				3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */,
+				3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */,
+			);
+			path = Course;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,16 +279,20 @@
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */,
+				3E25632928EE25880049ACDE /* CourseReviewTableViewCell.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
 				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
-				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
+				3EAF685E28E318EE000BFD72 /* SubjectsViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
+				3E25632028EE195E0049ACDE /* CourseViewControllerHeader.swift in Sources */,
 				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
 				3ED4AEFC28EDB3C7009A1E80 /* SubtitleTableViewCell.swift in Sources */,
+				3E25632728EE20E20049ACDE /* RatingView.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
 				3ED4AEFA28ED9817009A1E80 /* SubjectSerivce+Model.swift in Sources */,
 				3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */,
+				3ED4AEFF28EDF896009A1E80 /* CourseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
