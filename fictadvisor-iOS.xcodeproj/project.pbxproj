@@ -21,6 +21,7 @@
 		3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685B28E316E5000BFD72 /* SubjectsService.swift */; };
 		3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */; };
 		3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */; };
+		3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3EAF685B28E316E5000BFD72 /* SubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsService.swift; sourceTree = "<group>"; };
 		3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectViewController+Module.swift"; sourceTree = "<group>"; };
 		3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSubjectViewController.swift; sourceTree = "<group>"; };
+		3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				3E488EA828E705CC00C05803 /* CoreViewController.swift */,
 				3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */,
+				3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -108,7 +111,6 @@
 				3ED4AEEF28ECCD69009A1E80 /* OneSubject */,
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
 				3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */,
-				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
@@ -124,6 +126,7 @@
 		3EAF684628E302E0000BFD72 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3ED4AEF728ED9790009A1E80 /* Services */,
 				3EAF684728E302EA000BFD72 /* API.swift */,
 			);
 			path = Networking;
@@ -143,6 +146,22 @@
 				3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */,
 			);
 			path = OneSubject;
+			sourceTree = "<group>";
+		};
+		3ED4AEF728ED9790009A1E80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEF828ED979B009A1E80 /* Subject */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3ED4AEF828ED979B009A1E80 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
+			);
+			path = Subject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +252,7 @@
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
 				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
+				3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
