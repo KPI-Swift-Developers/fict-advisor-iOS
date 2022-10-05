@@ -8,16 +8,6 @@
 import Foundation
 import Alamofire
 
-struct Subject: Codable {
-    let id: String
-    let link: String
-    let name: String
-    let description: String?
-    let teacherCount: String
-    let rating: Float
-}
-typealias Subjects = [Subject]
-
 protocol SubjectsServiceTarget {
     func getSubjects(
         page: Int,
@@ -29,7 +19,7 @@ protocol SubjectsServiceTarget {
         subjectLink: String,
         page: Int,
         sort: SortingType,
-        completion: @escaping (Subjects) -> Void,
+        completion: @escaping (SubjectCourses) -> Void,
         errorCompletion: ((Error) -> Void)?)
 }
 
@@ -45,8 +35,8 @@ protocol PagingSubjectsService {
 }
 
 class SubjectsService: RestService {
-    private func linkString(page: Int, sort: SortingType) -> String {
-        return baseURL + "subjects?page=\(page)&page_size=\(standardPages)&sort=\(sort.urlName)"
+    private func linkString(_ sublink: String, page: Int, sort: SortingType) -> String {
+        return baseURL + "\(sublink)?page=\(page)&page_size=\(standardPages)&sort=\(sort.urlName)"
     }
     
     private(set) var page: Int = 0
@@ -57,15 +47,16 @@ extension SubjectsService: SubjectsServiceTarget {
         subjectLink: String,
         page: Int,
         sort: SortingType,
-        completion: @escaping (Subjects) -> Void, errorCompletion: ((Error) -> Void)?
+        completion: @escaping (SubjectCourses) -> Void,
+        errorCompletion: ((Error) -> Void)?
     ) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         AF.request(
-            linkString(page: page, sort: sort),
+            baseURL + "subjects/\(subjectLink)/courses?page=\(page)&page_size=\(standardPages)",
             method: .get
         ).responseDecodable(
-            of: APIArrayData<Subject>.self,
+            of: APIArrayData<SubjectCourse>.self,
             decoder: decoder
         ) {
             response in
@@ -84,7 +75,7 @@ extension SubjectsService: SubjectsServiceTarget {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         AF.request(
-            linkString(page: page, sort: sort),
+            linkString("subjects", page: page, sort: sort),
             method: .get
         ).responseDecodable(
             of: APIArrayData<Subject>.self,
