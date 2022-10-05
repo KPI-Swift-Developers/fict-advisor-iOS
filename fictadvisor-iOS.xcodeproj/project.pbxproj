@@ -13,6 +13,7 @@
 		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
 		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
 		30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */; };
+		30851F9C28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */; };
 		30DAB87928EB1431009B99F4 /* RewiewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87828EB1431009B99F4 /* RewiewsViewController.swift */; };
 		30DAB87B28EB20DF009B99F4 /* RewiewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87A28EB20DF009B99F4 /* RewiewsService.swift */; };
 		30DAB87E28EB25A2009B99F4 /* RewiewsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87D28EB25A2009B99F4 /* RewiewsViewController+Module.swift */; };
@@ -42,6 +43,7 @@
 		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
 		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
 		30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewCell.swift; sourceTree = "<group>"; };
+		30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeacherContactsViewController+Module.swift"; sourceTree = "<group>"; };
 		30DAB87828EB1431009B99F4 /* RewiewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewiewsViewController.swift; sourceTree = "<group>"; };
 		30DAB87A28EB20DF009B99F4 /* RewiewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewiewsService.swift; sourceTree = "<group>"; };
 		30DAB87D28EB25A2009B99F4 /* RewiewsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewiewsViewController+Module.swift"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */,
 				3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */,
 				3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */,
+				30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
+				30851F9C28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift in Sources */,
 				30DAB87E28EB25A2009B99F4 /* RewiewsViewController+Module.swift in Sources */,
 				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
 				30DAB88028EB2CE9009B99F4 /* ReviewsTableViewCell.swift in Sources */,

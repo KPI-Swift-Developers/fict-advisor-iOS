@@ -62,7 +62,7 @@ private extension SelectedTeacherViewController {
             containerViewController.didMove(toParent: self)
         } else {
             view.subviews.forEach({ $0.removeFromSuperview() })
-            containerViewController = TeacherContactsViewController()
+            containerViewController = TeacherContactsViewController.module
             view.addSubview(containerViewController.view)
             self.addChild(containerViewController)
             containerViewController.didMove(toParent: self)

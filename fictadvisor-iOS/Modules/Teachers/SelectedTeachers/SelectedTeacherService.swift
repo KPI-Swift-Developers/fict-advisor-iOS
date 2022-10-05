@@ -59,7 +59,6 @@ extension SelectedTeacherService: OneTeacherServiceTarget {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         AF.request(linkString(teacher: teacher), method: .get).responseDecodable(of: OneTeacher.self, decoder: decoder) { (response) in
             if response.response?.statusCode == 200, let value = response.value {
-                
                 completion(value)
             }
         }

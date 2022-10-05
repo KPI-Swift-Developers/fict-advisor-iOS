@@ -29,6 +29,7 @@ class TeacherContactsCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupLabels() {
+        valueLabel.numberOfLines = 0
         typeLabel.textColor = .secondaryLabel
     }
     

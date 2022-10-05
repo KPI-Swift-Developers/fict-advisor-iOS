@@ -17,6 +17,10 @@ struct APIArrayData<Data: Codable>: Codable {
     let items: [Data]
 }
 
+struct TeacherContactsAPIArrayData<Data: Codable>: Codable {
+    let items: [Data]
+}
+
 struct SortingType {
     let urlName: String
     
