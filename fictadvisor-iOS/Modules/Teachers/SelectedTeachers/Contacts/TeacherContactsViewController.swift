@@ -63,22 +63,17 @@ extension TeacherContactsViewController: UICollectionViewDelegate, UICollectionV
         guard let cell = cell else { return UICollectionViewCell() }
         cell.valueLabel.text = teacherContacts[indexPath.row].value
         cell.typeLabel.text = teacherContacts[indexPath.row].name
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let text = teacherContacts[indexPath.row].value
         UIPasteboard.general.string = text
-        
-//        let smallVC = UIView()
-//        let label = UILabel()
-//        label.text = "Скопійовано"
-//
-//        smallVC.addSubview(label)
-//        label.snp.makeConstraints {
-//            $0.edges.equalToSuperview().inset(10)
-//        }
-//
+        let alert = UIAlertController(title: "Cкопійовано", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 

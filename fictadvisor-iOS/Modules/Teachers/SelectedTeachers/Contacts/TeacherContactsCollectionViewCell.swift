@@ -12,6 +12,12 @@ class TeacherContactsCollectionViewCell: UICollectionViewCell {
     let typeLabel = UILabel()
     let valueLabel = UILabel()
     
+    override var isSelected: Bool {
+        didSet {
+            self.contentView.backgroundColor = isSelected ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) : #colorLiteral(red: 0.1123788431, green: 0.1361303627, blue: 0.1675599813, alpha: 1)
+        }
+    }
+    
     private lazy var stackView = UIStackView(arrangedSubviews: [typeLabel, valueLabel])
     
     override init(frame: CGRect) {
