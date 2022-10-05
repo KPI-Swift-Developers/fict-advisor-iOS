@@ -8,6 +8,7 @@
 import UIKit
 
 class TeacherContactsViewController: UIViewController {
+    var teacherToSearch = String()
     private var teacherContacts = TeacherContacts()
     private var collectionView: UICollectionView! = nil
     let setvice: TeacherContactServiceTarget
@@ -25,9 +26,10 @@ class TeacherContactsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureCollectionView()
-        setvice.getContacts(for: "bazaka-yurij-anatolijovich", completion: {[weak self] (_contacts) in
+        setvice.getContacts(for: teacherToSearch, completion: {[weak self] (_contacts) in
             self?.displayContacts(contacts: _contacts)
         }, errorCompletion: nil)
+        
     }
 }
 
@@ -49,6 +51,10 @@ extension TeacherContactsViewController {
     
     private func displayContacts(contacts: TeacherContacts) {
         self.teacherContacts = contacts
+        if contacts.count == 0 {
+            collectionView.backgroundView = NoResultsView()
+        }
+
         collectionView.reloadData()
     }
 }

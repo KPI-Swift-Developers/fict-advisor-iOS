@@ -34,6 +34,7 @@ class TeachersViewController: UIViewController {
         
         service.getTeachers(page: 0, sort: sortingType, completion: { [weak self] _teachers in
             self?.displayTeachers(_teachers)
+            self?.storedTeachers = _teachers
         }, errorCompletition: nil)
         setupSearchController()
         configureButtons()
@@ -182,27 +183,26 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(SelectedTeacherViewController.module, animated: true)
+        let vc = SelectedTeacherViewController.module
+        vc.teacherToSearch = teachers[indexPath.row].link
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
 extension TeachersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
-        let filteredTeachers = storedTeachers.filter {
-            $0.firstName
-                .lowercased()
-                .contains(
-                    text.lowercased()
-                )
+        if searchController.isActive {
+            guard let text = searchController.searchBar.text else { return }
+            service.searchTeacher(text: text, completion: {[weak self] (_teachers) in
+                self?.teachers = _teachers
+                self?.tableView.reloadData()
+            }, errorCompletition: nil)
         }
-        if !searchController.isActive {
+        else {
             teachers = storedTeachers
             tableView.reloadData()
         }
-        teachers = filteredTeachers
-        tableView.reloadData()
     }
 }
 

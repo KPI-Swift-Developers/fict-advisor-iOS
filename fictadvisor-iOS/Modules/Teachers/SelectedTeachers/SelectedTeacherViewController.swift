@@ -12,6 +12,7 @@ class SelectedTeacherViewController: SearchCoreViewController {
     private let service: SelectedTeacherService
     private let segmenedControl = UISegmentedControl(items: ["Предмети", "Відгуки", "Контакти"])
     private var containerViewController = UIViewController()
+    var teacherToSearch = String()
     
     private var teacher: OneTeacher! {
         didSet {
@@ -32,9 +33,10 @@ class SelectedTeacherViewController: SearchCoreViewController {
         super.viewDidCreated()
         view.backgroundColor = .systemBackground
         setupView()
-        service.getTeacher(teacher: "sirota-olena-petrivna", completion: { [weak self] (_teacher) in
+        service.getTeacher(teacher: teacherToSearch, completion: { [weak self] (_teacher) in
             self?.teacher = _teacher
         }, errorCompletion: nil)
+        segmentedControllDidTap()
     }
 }
 
@@ -53,20 +55,24 @@ private extension SelectedTeacherViewController {
     }
     @objc private func segmentedControllDidTap() {
         if segmenedControl.selectedSegmentIndex == 0 {
-            
+            view.subviews.forEach({ $0.removeFromSuperview() })
+            let vc = TeacherSubjectsViewController.module
+            vc.teacherToSearch = teacherToSearch
+            containerViewController = vc
         } else if segmenedControl.selectedSegmentIndex == 1 {
             view.subviews.forEach({ $0.removeFromSuperview() })
-            containerViewController = ReviewsViewController.module
-            view.addSubview(containerViewController.view)
-            self.addChild(containerViewController)
-            containerViewController.didMove(toParent: self)
+            let vc = ReviewsViewController.module
+            vc.teacherToSearch = teacherToSearch
+            containerViewController = vc
         } else {
             view.subviews.forEach({ $0.removeFromSuperview() })
-            containerViewController = TeacherContactsViewController.module
-            view.addSubview(containerViewController.view)
-            self.addChild(containerViewController)
-            containerViewController.didMove(toParent: self)
+            let vc = TeacherContactsViewController.module
+            vc.teacherToSearch = teacherToSearch
+            containerViewController = vc
         }
+        view.addSubview(containerViewController.view)
+        self.addChild(containerViewController)
+        containerViewController.didMove(toParent: self)
         setupConstraints()
     }
 }
