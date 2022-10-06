@@ -12,6 +12,7 @@ class TeachersViewController: UIViewController {
     private let service: TeachersServiceTarget
     private var teachers = Teachers()
     private let tableView = StateTableView()
+    private let loadMoreButton = StateButton(title: "load more")
     
     private var searchController = UISearchController()
     private var sortingType: SortingType = .byName
@@ -93,23 +94,20 @@ private extension TeachersViewController {
     
     @objc func loadMoreButtonDidTap() {
         page += 1
-        print(page)
-        service.getTeachers(page: page, sort: sortingType, completion: {[weak self] _teachers in
-            self?.teachers.append(contentsOf: _teachers)
-            self?.storedTeachers.append(contentsOf: _teachers)
-            self?.tableView.reloadData()
-        }, errorCompletition: nil)
+        
+        loadMoreButton.startLoading()
+        service.getTeachers(
+            page: page,
+            sort: sortingType,
+            completion: { [weak self] _teachers in
+                self?.loadMoreButton.stopLoading()
+                self?.teachers.append(contentsOf: _teachers)
+                self?.storedTeachers.append(contentsOf: _teachers)
+                self?.tableView.reloadData()
+            },
+            errorCompletition: nil)
     }
 }
-
-private extension TeachersViewController {
-    func setupSearchController() {
-        navigationItem.searchController = searchController
-        searchController.hidesNavigationBarDuringPresentation = true
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-}
-
 
 private extension TeachersViewController {
     func displayTeachers(_ teachers: Teachers) {
@@ -120,6 +118,12 @@ private extension TeachersViewController {
 }
 
 private extension TeachersViewController {
+    func setupSearchController() {
+        navigationItem.searchController = searchController
+        searchController.hidesNavigationBarDuringPresentation = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     func configureViewController() {
         title = "Subjects"
         searchController.searchResultsUpdater = self
@@ -176,20 +180,18 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         viewForFooterInSection section: Int
     ) -> UIView? {
         let footer = UIView()
-        let button = UIButton()
         
-        footer.addSubview(button)
-        button.snp.makeConstraints() {
+        footer.addSubview(loadMoreButton)
+        loadMoreButton.snp.makeConstraints() {
             $0.top.equalToSuperview().offset(10)
             $0.bottom.equalToSuperview().offset(-10)
             $0.left.right.equalToSuperview()
         }
         
-        button.backgroundColor = .white
-        button.setTitle("Завантажити більше", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(loadMoreButtonDidTap), for: .touchUpInside)
+        loadMoreButton.backgroundColor = .secondarySystemGroupedBackground
+        loadMoreButton.setTitleColor(.systemBlue, for: .normal)
+        loadMoreButton.layer.cornerRadius = 10
+        loadMoreButton.addTarget(self, action: #selector(loadMoreButtonDidTap), for: .touchUpInside)
         
         return footer
     }
