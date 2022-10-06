@@ -50,9 +50,20 @@ class SubjectsViewController: SearchCoreViewController {
         )
         
         alert.addAction(
-            UIAlertAction(title: "За рейтингом", style: .default, handler: byRateButtonDidTap))
+            UIAlertAction(
+                title: "За рейтингом",
+                style: .default,
+                handler: byRateButtonDidTap
+            )
+        )
+        
         alert.addAction(
-            UIAlertAction(title: "По имени", style: .default, handler: byNameButtonDidTap))
+            UIAlertAction(
+                title: "По имени",
+                style: .default,
+                handler: byNameButtonDidTap
+            )
+        )
         present(alert, animated: true, completion: nil)
     }
     
@@ -149,7 +160,10 @@ private extension SubjectsViewController {
 }
 
 extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         navigationController?.pushViewController(
             OneSubjectViewController.module(subject: subjects[indexPath.row]),
             animated: true)
