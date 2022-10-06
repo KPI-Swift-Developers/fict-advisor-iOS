@@ -146,7 +146,7 @@ private extension SubjectsViewController {
         tableView.dataSource = self
         
         tableView.register(
-            UITableViewCell.self,
+            SubtitleTableViewCell.self,
             forCellReuseIdentifier: "cell")
     }
 }
@@ -190,6 +190,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
             for: indexPath)
         cell.textLabel?.text = subjects[indexPath.row].name
         cell.textLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = "teacher count: \(subjects[indexPath.row].teacherCount)"
         return cell
     }
     
