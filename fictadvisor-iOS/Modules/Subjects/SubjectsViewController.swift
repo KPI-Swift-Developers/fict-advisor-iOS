@@ -169,6 +169,10 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
             animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -184,6 +188,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: "cell",
             for: indexPath)
         cell.textLabel?.text = subjects[indexPath.row].name
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
