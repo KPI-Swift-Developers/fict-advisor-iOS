@@ -49,7 +49,7 @@ class CourseViewController: SearchCoreViewController {
                 [weak self] list in
                 guard let self = self else { return }
                 self.reviews = list
-                list.isEmpty ? self.tableView.setEmptyState() : self.tableView.popStateView()
+                list.isEmpty ? self.tableView.setEmptyState() : self.tableView.popEmptyState()
                 self.tableView.reloadData()
             },
             errorCompletion: nil)

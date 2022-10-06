@@ -40,7 +40,8 @@ class OneSubjectViewController: CoreViewController {
                 [weak self] list in
                 guard let self = self else { return }
                 self.tableView.stopLoading()
-                list.isEmpty ? self.tableView.setEmptyState() : self.tableView.popStateView()
+                list.isEmpty ? self.tableView.setEmptyState() : self.tableView.popEmptyState()
+              
                 self.courses = list
                 self.tableView.reloadData()
             },
