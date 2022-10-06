@@ -29,8 +29,8 @@ https://core.telegram.org/widgets/login
 
 - main page
 - settings 
-- teachers (s) -> teacher (s)
-- subjects (j) -> subject (j)
+- teachers (s) -> oneTeacher (s) -> teacherReview (s) + teacherContacts (s)
+- subjects (j) -> oneSubject (j) -> course (j)
 - superheroes
 - help
 - telegram auth
