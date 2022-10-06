@@ -23,6 +23,7 @@ class CourseViewController: SearchCoreViewController {
             $0.edges.equalToSuperview()
         }
         
+        tableView.allowsSelection = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
