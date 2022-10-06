@@ -207,7 +207,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
             $0.left.right.equalToSuperview()
         }
         
-        button.backgroundColor = .white
+        button.backgroundColor = .secondarySystemGroupedBackground
         button.setTitle("Load more", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.layer.cornerRadius = 10
