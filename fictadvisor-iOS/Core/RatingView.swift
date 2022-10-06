@@ -11,7 +11,7 @@ class RatingView: UIView {
     
     private var imageViews: [UIImageView] = []
     
-    init(maxStars: Int = 5, color: UIColor = .darkText) {
+    init(maxStars: Int = 5, color: UIColor = .systemBlue) {
         super.init(frame: .zero)
         
         let st = UIStackView()
