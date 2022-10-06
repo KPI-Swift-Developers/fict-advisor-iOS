@@ -164,6 +164,7 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
+        tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(
             OneSubjectViewController.module(subject: subjects[indexPath.row]),
             animated: true)
