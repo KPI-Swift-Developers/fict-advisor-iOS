@@ -121,6 +121,7 @@ private extension TeachersViewController {
     func configureViewController() {
         title = "Subjects"
         searchController.searchResultsUpdater = self
+        tabBarItem.image = UIImage(systemName: "person.2.fill")!
     }
     
     func configureTableView() {
