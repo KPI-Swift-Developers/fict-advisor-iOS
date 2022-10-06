@@ -11,14 +11,18 @@ class TabBarViewController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        let vc1 = UIViewController()
+        let vc1 = TeachersViewController.module
         let vc2 = SubjectsViewController.module
         
         vc1.view.backgroundColor = .red
         vc1.title = "Teachers"
+        vc2.title = "Subjects"
         
         setViewControllers(
-            [UINavigationController(rootViewController: vc2), vc1],
+            [
+                UINavigationController(rootViewController: vc1),
+                UINavigationController(rootViewController: vc2)
+            ],
             animated: false
         )
     }

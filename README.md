@@ -25,10 +25,12 @@ https://core.telegram.org/widgets/login
 - iPadOS support 
 
 ## programm parts 
+(j) - jeyery (s) - sashka
+
 - main page
 - settings 
-- teachers (s)
-- subjects (j)
+- teachers (s) -> oneTeacher (s) -> teacherReview (s) + teacherContacts (s)
+- subjects (j) -> oneSubject (j) -> course (j)
 - superheroes
 - help
 - telegram auth

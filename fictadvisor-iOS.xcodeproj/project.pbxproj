@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E25632028EE195E0049ACDE /* CourseViewControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */; };
+		3E25632728EE20E20049ACDE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25632628EE20E20049ACDE /* RatingView.swift */; };
+		3E25632928EE25880049ACDE /* CourseReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */; };
+		3000691128ECE8B90026E1C1 /* TeacherContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */; };
+		3000691328ECE8DC0026E1C1 /* TeacherContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */; };
+		3000691628ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */; };
+		30067A9A28E33108009BC502 /* TeachersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9928E33108009BC502 /* TeachersService.swift */; };
+		30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */; };
+		30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */; };
+		30851F9C28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */; };
+		30851F9E28EDAEC700F04E5E /* TeacherSubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851F9D28EDAEC700F04E5E /* TeacherSubjectsService.swift */; };
+		30851FA028EDB08600F04E5E /* TeacherSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851F9F28EDB08600F04E5E /* TeacherSubjectsViewController.swift */; };
+		30851FA328EDB09F00F04E5E /* TeacherSubjectsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851FA228EDB09F00F04E5E /* TeacherSubjectsViewController+Module.swift */; };
+		30851FA528EE1E6300F04E5E /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30851FA428EE1E6300F04E5E /* NoResultsView.swift */; };
+		30DAB87928EB1431009B99F4 /* RewiewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87828EB1431009B99F4 /* RewiewsViewController.swift */; };
+		30DAB87B28EB20DF009B99F4 /* RewiewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87A28EB20DF009B99F4 /* RewiewsService.swift */; };
+		30DAB87E28EB25A2009B99F4 /* RewiewsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87D28EB25A2009B99F4 /* RewiewsViewController+Module.swift */; };
+		30DAB88028EB2CE9009B99F4 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DAB87F28EB2CE9009B99F4 /* ReviewsTableViewCell.swift */; };
+		30E05B8D28E719C7006B3C04 /* SelectedTeacherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */; };
+		30E05B8E28E719C7006B3C04 /* SelectedTeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */; };
+		30E05B8F28E719C7006B3C04 /* SelectedTeacherViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */; };
+		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
+		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
@@ -17,10 +40,38 @@
 		3EAF685728E3057A000BFD72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685628E3057A000BFD72 /* SnapKit */; };
 		3EAF685A28E30589000BFD72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAF685928E30589000BFD72 /* Alamofire */; };
 		3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685B28E316E5000BFD72 /* SubjectsService.swift */; };
-		3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */; };
+		3EAF685E28E318EE000BFD72 /* SubjectsViewController+Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */; };
+		3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */; };
+		3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */; };
+		3ED4AEFA28ED9817009A1E80 /* SubjectSerivce+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */; };
+		3ED4AEFC28EDB3C7009A1E80 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */; };
+		3ED4AEFF28EDF896009A1E80 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewControllerHeader.swift; sourceTree = "<group>"; };
+		3E25632628EE20E20049ACDE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReviewTableViewCell.swift; sourceTree = "<group>"; };
+		3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsViewController.swift; sourceTree = "<group>"; };
+		3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsService.swift; sourceTree = "<group>"; };
+		3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherContactsCollectionViewCell.swift; sourceTree = "<group>"; };
+		30067A9928E33108009BC502 /* TeachersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersService.swift; sourceTree = "<group>"; };
+		30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersViewController+Module.swift"; sourceTree = "<group>"; };
+		30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersTableViewCell.swift; sourceTree = "<group>"; };
+		30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeacherContactsViewController+Module.swift"; sourceTree = "<group>"; };
+		30851F9D28EDAEC700F04E5E /* TeacherSubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectsService.swift; sourceTree = "<group>"; };
+		30851F9F28EDB08600F04E5E /* TeacherSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherSubjectsViewController.swift; sourceTree = "<group>"; };
+		30851FA228EDB09F00F04E5E /* TeacherSubjectsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeacherSubjectsViewController+Module.swift"; sourceTree = "<group>"; };
+		30851FA428EE1E6300F04E5E /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		30DAB87828EB1431009B99F4 /* RewiewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewiewsViewController.swift; sourceTree = "<group>"; };
+		30DAB87A28EB20DF009B99F4 /* RewiewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewiewsService.swift; sourceTree = "<group>"; };
+		30DAB87D28EB25A2009B99F4 /* RewiewsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewiewsViewController+Module.swift"; sourceTree = "<group>"; };
+		30DAB87F28EB2CE9009B99F4 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTeacherService.swift; sourceTree = "<group>"; };
+		30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTeacherViewController.swift; sourceTree = "<group>"; };
+		30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectedTeacherViewController+Module.swift"; sourceTree = "<group>"; };
+		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
+		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,7 +82,12 @@
 		3EAF685128E304D8000BFD72 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
 		3EAF685B28E316E5000BFD72 /* SubjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsService.swift; sourceTree = "<group>"; };
-		3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectViewController+Module.swift"; sourceTree = "<group>"; };
+		3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectsViewController+Module.swift"; sourceTree = "<group>"; };
+		3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSubjectViewController.swift; sourceTree = "<group>"; };
+		3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableView.swift; sourceTree = "<group>"; };
+		3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectSerivce+Model.swift"; sourceTree = "<group>"; };
+		3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +103,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+        3000691428ECE8E60026E1C1 /* Contacts */ = {
+            isa = PBXGroup;
+            children = (
+                3000691028ECE8B90026E1C1 /* TeacherContactsViewController.swift */,
+                3000691228ECE8DB0026E1C1 /* TeacherContactsService.swift */,
+                3000691528ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift */,
+                30851F9B28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift */,
+            );
+            path = Contacts;
+            sourceTree = "<group>";
+        };
+        30851FA128EDB08E00F04E5E /* Subjects */ = {
+            isa = PBXGroup;
+            children = (
+                30851F9D28EDAEC700F04E5E /* TeacherSubjectsService.swift */,
+                30851F9F28EDB08600F04E5E /* TeacherSubjectsViewController.swift */,
+                30851FA228EDB09F00F04E5E /* TeacherSubjectsViewController+Module.swift */,
+            );
+            path = Subjects;
+            sourceTree = "<group>";
+        };
+        30DAB87C28EB20E9009B99F4 /* Rewiews */ = {
+            isa = PBXGroup;
+            children = (
+                30DAB87828EB1431009B99F4 /* RewiewsViewController.swift */,
+                30DAB87A28EB20DF009B99F4 /* RewiewsService.swift */,
+                30DAB87D28EB25A2009B99F4 /* RewiewsViewController+Module.swift */,
+                30DAB87F28EB2CE9009B99F4 /* ReviewsTableViewCell.swift */,
+            );
+            path = Rewiews;
+            sourceTree = "<group>";
+        };
+        30E05B9028EA1F02006B3C04 /* SelectedTeachers */ = {
+            isa = PBXGroup;
+            children = (
+                30E05B8A28E719C6006B3C04 /* SelectedTeacherService.swift */,
+                30E05B8B28E719C6006B3C04 /* SelectedTeacherViewController.swift */,
+                30E05B8C28E719C6006B3C04 /* SelectedTeacherViewController+Module.swift */,
+                30DAB87C28EB20E9009B99F4 /* Rewiews */,
+                3000691428ECE8E60026E1C1 /* Contacts */,
+                30851FA128EDB08E00F04E5E /* Subjects */,
+            );
+            path = SelectedTeachers;
+            sourceTree = "<group>";
+        };
+		3E25632128EE19E80049ACDE /* Extension  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extension ";
+			sourceTree = "<group>";
+		};
+		3E488EA728E705B900C05803 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3E25632128EE19E80049ACDE /* Extension  */,
+				3E488EA828E705CC00C05803 /* CoreViewController.swift */,
+				3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */,
+				3ED4AEF328ED8A33009A1E80 /* StateTableView.swift */,
+				3ED4AEFB28EDB3C7009A1E80 /* SubtitleTableViewCell.swift */,
+				3E25632628EE20E20049ACDE /* RatingView.swift */,
+                30851FA428EE1E6300F04E5E /* NoResultsView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		3EAF682328E2F8E1000BFD72 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +188,7 @@
 		3EAF682E28E2F8E1000BFD72 /* fictadvisor-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3E488EA728E705B900C05803 /* Core */,
 				3EAF684628E302E0000BFD72 /* Networking */,
 				3EAF684328E300EF000BFD72 /* Modules */,
 				3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */,
@@ -89,9 +212,10 @@
 		3EAF684428E300F6000BFD72 /* Subjects */ = {
 			isa = PBXGroup;
 			children = (
+				3ED4AEFD28EDF859009A1E80 /* Course */,
+				3ED4AEEF28ECCD69009A1E80 /* OneSubject */,
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
-				3EAF685D28E318EE000BFD72 /* SubjectViewController+Module.swift */,
-				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
+				3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
@@ -100,6 +224,10 @@
 			isa = PBXGroup;
 			children = (
 				3EAF685128E304D8000BFD72 /* TeachersViewController.swift */,
+				30067A9928E33108009BC502 /* TeachersService.swift */,
+				30067A9B28E342E9009BC502 /* TeachersViewController+Module.swift */,
+				30067A9D28E349C0009BC502 /* TeachersTableViewCell.swift */,
+				30E05B9028EA1F02006B3C04 /* SelectedTeachers */,
 			);
 			path = Teachers;
 			sourceTree = "<group>";
@@ -107,6 +235,7 @@
 		3EAF684628E302E0000BFD72 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3ED4AEF728ED9790009A1E80 /* Services */,
 				3EAF684728E302EA000BFD72 /* API.swift */,
 			);
 			path = Networking;
@@ -118,6 +247,41 @@
 				3EAF684F28E303B9000BFD72 /* TabBarViewController.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		3ED4AEEF28ECCD69009A1E80 /* OneSubject */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEF028ECCD80009A1E80 /* OneSubjectViewController.swift */,
+			);
+			path = OneSubject;
+			sourceTree = "<group>";
+		};
+		3ED4AEF728ED9790009A1E80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEF828ED979B009A1E80 /* Subject */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3ED4AEF828ED979B009A1E80 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				3EAF685B28E316E5000BFD72 /* SubjectsService.swift */,
+				3ED4AEF928ED9817009A1E80 /* SubjectSerivce+Model.swift */,
+			);
+			path = Subject;
+			sourceTree = "<group>";
+		};
+		3ED4AEFD28EDF859009A1E80 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				3ED4AEFE28EDF896009A1E80 /* CourseViewController.swift */,
+				3E25631F28EE195E0049ACDE /* CourseViewControllerHeader.swift */,
+				3E25632828EE25880049ACDE /* CourseReviewTableViewCell.swift */,
+			);
+			path = Course;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,13 +362,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30067A9E28E349C0009BC502 /* TeachersTableViewCell.swift in Sources */,
+				30067A9A28E33108009BC502 /* TeachersService.swift in Sources */,
 				3EAF685C28E316E5000BFD72 /* SubjectsService.swift in Sources */,
+				30851FA528EE1E6300F04E5E /* NoResultsView.swift in Sources */,
 				3EAF684828E302EA000BFD72 /* API.swift in Sources */,
+				3ED4AEF128ECCD80009A1E80 /* OneSubjectViewController.swift in Sources */,
+				3E25632928EE25880049ACDE /* CourseReviewTableViewCell.swift in Sources */,
 				3EAF685428E304DF000BFD72 /* SubjectsViewController.swift in Sources */,
+				30851F9C28ED8EF400F04E5E /* TeacherContactsViewController+Module.swift in Sources */,
+				30DAB87E28EB25A2009B99F4 /* RewiewsViewController+Module.swift in Sources */,
+				30851FA328EDB09F00F04E5E /* TeacherSubjectsViewController+Module.swift in Sources */,
+				30851F9E28EDAEC700F04E5E /* TeacherSubjectsService.swift in Sources */,
+				3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */,
+				30DAB88028EB2CE9009B99F4 /* ReviewsTableViewCell.swift in Sources */,
+				30E05B8D28E719C7006B3C04 /* SelectedTeacherService.swift in Sources */,
 				3EAF685228E304D8000BFD72 /* TeachersViewController.swift in Sources */,
-				3EAF685E28E318EE000BFD72 /* SubjectViewController+Module.swift in Sources */,
+				3EAF685E28E318EE000BFD72 /* SubjectsViewController+Module.swift in Sources */,
 				3EAF685028E303BA000BFD72 /* TabBarViewController.swift in Sources */,
+				3E25632028EE195E0049ACDE /* CourseViewControllerHeader.swift in Sources */,
+				3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */,
+				3ED4AEFC28EDB3C7009A1E80 /* SubtitleTableViewCell.swift in Sources */,
+				3E25632728EE20E20049ACDE /* RatingView.swift in Sources */,
 				3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */,
+				3ED4AEFA28ED9817009A1E80 /* SubjectSerivce+Model.swift in Sources */,
+				3ED4AEF428ED8A33009A1E80 /* StateTableView.swift in Sources */,
+				3ED4AEFF28EDF896009A1E80 /* CourseViewController.swift in Sources */,
+                30E05B8F28E719C7006B3C04 /* SelectedTeacherViewController+Module.swift in Sources */,
+                30851FA028EDB08600F04E5E /* TeacherSubjectsViewController.swift in Sources */,
+                3000691128ECE8B90026E1C1 /* TeacherContactsViewController.swift in Sources */,
+                30DAB87B28EB20DF009B99F4 /* RewiewsService.swift in Sources */,
+                30DAB87928EB1431009B99F4 /* RewiewsViewController.swift in Sources */,
+                3000691628ECEE4C0026E1C1 /* TeacherContactsCollectionViewCell.swift in Sources */,
+                30E05B8E28E719C7006B3C04 /* SelectedTeacherViewController.swift in Sources */,
+                3000691328ECE8DC0026E1C1 /* TeacherContactsService.swift in Sources */,
+                30067A9C28E342E9009BC502 /* TeachersViewController+Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

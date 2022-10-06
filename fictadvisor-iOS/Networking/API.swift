@@ -16,3 +16,14 @@ struct APIArrayData<Data: Codable>: Codable {
     let count: Int
     let items: [Data]
 }
+
+struct TeacherContactsAPIArrayData<Data: Codable>: Codable {
+    let items: [Data]
+}
+
+struct SortingType {
+    let urlName: String
+    
+    static let byName = SortingType(urlName: "name")
+    static let byRate = SortingType(urlName: "rating")
+}
