@@ -19,7 +19,10 @@ class TabBarViewController: UITabBarController {
         vc2.title = "Subjects"
         
         setViewControllers(
-            [UINavigationController(rootViewController: vc1), vc2],
+            [
+                UINavigationController(rootViewController: vc1),
+                UINavigationController(rootViewController: vc2)
+            ],
             animated: false
         )
     }
