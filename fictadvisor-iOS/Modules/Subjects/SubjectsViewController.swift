@@ -67,6 +67,10 @@ class SubjectsViewController: SearchCoreViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    override func didTapCloseButton(_ searchBarViewController: UISearchController) {
+        displaySubjects(storedSubjects)
+    }
+    
     override func didEnterTextIn(_ searchBarViewController: UISearchController) {
         guard
             let string = searchBarViewController.searchBar.text
@@ -74,22 +78,29 @@ class SubjectsViewController: SearchCoreViewController {
             return
         }
         
-        let filteredSubs = storedSubjects.filter {
-            $0.name
-                .lowercased()
-                .contains(
-                    string.lowercased()
-                )
-        }
+        service.searchSubjects(string, page: 0, pageSize: 10, sort: sortingType, completion: {
+            [weak self] subs in
+            guard let self = self else { return }
+            self.subjects = subs
+            self.tableView.reloadData()
+        }, errorCompletion: nil)
         
-        if string.isEmpty {
-            subjects = storedSubjects
-            tableView.reloadData()
-            return
-        }
-        
-        subjects = filteredSubs
-        tableView.reloadData()
+//        let filteredSubs = storedSubjects.filter {
+//            $0.name
+//                .lowercased()
+//                .contains(
+//                    string.lowercased()
+//                )
+//        }
+//
+//        if string.isEmpty {
+//            subjects = storedSubjects
+//            tableView.reloadData()
+//            return
+//        }
+//
+//        subjects = filteredSubs
+//        tableView.reloadData()
     }
 
     private var subjects = Subjects()

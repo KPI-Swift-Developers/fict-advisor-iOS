@@ -31,10 +31,15 @@ class SearchCoreViewController: CoreViewController {
     
     private let searchVC = UISearchController()
     func didEnterTextIn(_ searchBarViewController: UISearchController) {}
+    func didTapCloseButton(_ searchBarViewController: UISearchController) {}
 }
 
 extension SearchCoreViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         didEnterTextIn(searchController)
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        didTapCloseButton(searchVC)
     }
 }

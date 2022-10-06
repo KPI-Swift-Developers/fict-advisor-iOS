@@ -28,6 +28,14 @@ protocol SubjectsServiceTarget {
         sort: SortingType,
         completion: @escaping (CourseReviews) -> Void,
         errorCompletion: ((Error) -> Void)?)
+    
+    func searchSubjects(
+        _ searchString: String,
+        page: Int,
+        pageSize: Int,
+        sort: SortingType,
+        completion: @escaping (Subjects) -> Void,
+        errorCompletion: ErrorCompletion?)
 }
 
 protocol PagingSubjectsService {
@@ -50,6 +58,35 @@ class SubjectsService: RestService {
 }
 
 extension SubjectsService: SubjectsServiceTarget {
+    func searchSubjects(
+        _ searchString: String,
+        page: Int,
+        pageSize: Int,
+        sort: SortingType,
+        completion: @escaping (Subjects) -> Void,
+        errorCompletion: ((Error) -> Void)?
+    ) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        guard let urlString = (baseURL + "subjects?page=\(page)&page_size=\(pageSize)&search=\(searchString)&sort=\(sort.urlName)").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return
+        }
+        
+        AF.request(
+            urlString,
+            method: .get
+        ).responseDecodable(
+            of: APIArrayData<Subject>.self,
+            decoder: decoder
+        ) {
+            response in
+            if response.response?.statusCode == 200, let value = response.value {
+                completion(value.items)
+            }
+        }
+    }
+    
     func getCourses(
         subjectLink: String,
         page: Int,

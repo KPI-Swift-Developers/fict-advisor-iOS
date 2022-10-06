@@ -110,6 +110,6 @@ extension CourseViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
     ) -> CGFloat {
-        return 150
+        return UITableView.automaticDimension
     }
 }

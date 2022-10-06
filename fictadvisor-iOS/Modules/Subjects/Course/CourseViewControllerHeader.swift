@@ -14,13 +14,15 @@ class CourseViewControllerHeader: UIView {
 
         addSubview(st)
         st.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.left.right.equalToSuperview()
+//            $0.centerY.equalToSuperview()
+//            $0.left.right.equalToSuperview()
+            $0.top.left.right.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-10)
         }
         
         st.axis = .vertical
         st.spacing = 10
-        st.distribution = .fillProportionally
+        //st.distribution = .fillProportionally
         
         st.addArrangedSubview(teacherNameLabel)
         st.addArrangedSubview(courseNameLabel)
