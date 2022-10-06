@@ -35,6 +35,8 @@ class CourseReviewTableViewCell: UITableViewCell {
             $0.right.equalToSuperview().offset(-10)
             $0.bottom.equalToSuperview().offset(-10)
         }
+        
+        dateLabel.textColor = .systemBlue
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +50,14 @@ class CourseReviewTableViewCell: UITableViewCell {
     func setModel(review: CourseReview) {
         ratingView.setRating(rating: review.rating)
         reviewLabel.text = review.content
-        dateLabel.text = review.date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.date(from: review.date)
+        
+        dateFormatter.dateFormat = "dd.mm.yyyy"
+        let dateString = dateFormatter.string(from: date!)
+        
+        dateLabel.text = dateString
     }
 }
