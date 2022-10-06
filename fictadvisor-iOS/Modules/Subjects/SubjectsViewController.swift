@@ -100,6 +100,7 @@ class SubjectsViewController: SearchCoreViewController {
     private let service: SubjectsServiceTarget
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let loadMoreButton = StateButton(title: "load more")
 }
 
 private extension SubjectsViewController {
@@ -130,7 +131,23 @@ private extension SubjectsViewController {
         
         paging.clearPage()
     }
+    
+    @objc func loadMoreButtonDidTap() {
+        loadMoreButton.startLoading()
+        paging.pagedSubjects(
+            sort: sortingType,
+            completion: {
+                [weak self] subs in
+                guard let self = self else { return }
+                self.loadMoreButton.stopLoading()
+                self.subjects.append(contentsOf: subs)
+                self.displaySubjects(self.subjects)
+            },
+            errorCompletion: nil)
+    }
+}
 
+private extension SubjectsViewController {
     func configureViewController() {
         title = "Subjects"
         tabBarItem.image = UIImage(systemName: "book.closed.fill")!
@@ -149,9 +166,7 @@ private extension SubjectsViewController {
             SubtitleTableViewCell.self,
             forCellReuseIdentifier: "cell")
     }
-}
-
-private extension SubjectsViewController {
+    
     func displaySubjects(_ subjects: Subjects) {
         self.subjects = subjects
         self.storedSubjects = subjects
@@ -199,33 +214,19 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         viewForFooterInSection section: Int
     ) -> UIView? {
         let footer = UIView()
-        let button = UIButton()
         
-        footer.addSubview(button)
-        button.snp.makeConstraints() {
+        footer.addSubview(loadMoreButton)
+        loadMoreButton.snp.makeConstraints() {
             $0.top.equalToSuperview().offset(10)
             $0.bottom.equalToSuperview().offset(-10)
             $0.left.right.equalToSuperview()
         }
         
-        button.backgroundColor = .secondarySystemGroupedBackground
-        button.setTitle("Load more", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(showMoreButton), for: .touchUpInside)
+        loadMoreButton.backgroundColor = .secondarySystemGroupedBackground
+        loadMoreButton.setTitleColor(.systemBlue, for: .normal)
+        loadMoreButton.layer.cornerRadius = 10
+        loadMoreButton.addTarget(self, action: #selector(loadMoreButtonDidTap), for: .touchUpInside)
         return footer
-    }
-    
-    @objc func showMoreButton() {
-        paging.pagedSubjects(
-            sort: sortingType,
-            completion: {
-                [weak self] subs in
-                guard let self = self else { return }
-                self.subjects.append(contentsOf: subs)
-                self.displaySubjects(self.subjects)
-            },
-            errorCompletion: nil)
     }
     
     func tableView(
