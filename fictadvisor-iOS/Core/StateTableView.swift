@@ -11,30 +11,17 @@ import SnapKit
 class StateTableView: UITableView {
     
     init(
-        emptyTitle: String = "No data...",
+        emptyTitle: String = "Нет данных",
         frame: CGRect = .zero,
         style: UITableView.Style = .insetGrouped
     ) {
         super.init(frame: frame, style: style)
         
-        addSubview(spinner)
-        spinner.snp.makeConstraints() {
-            $0.center.equalToSuperview()
-        }
-        
-        addSubview(emptyLabel)
-        emptyLabel.snp.makeConstraints() {
-            $0.centerY
-                .equalToSuperview()
-            $0.centerX.equalToSuperview()
-        }
-        
         emptyLabel.text = emptyTitle
         emptyLabel.font = .systemFont(ofSize: 22, weight: .semibold)
+        emptyLabel.textColor = .secondaryLabel
         spinner.startAnimating()
-        
-        spinner.isHidden = true
-        emptyLabel.isHidden = true
+        emptyLabel.textAlignment = .center
     }
     
     required init?(coder: NSCoder) {
@@ -47,21 +34,18 @@ class StateTableView: UITableView {
 
 extension StateTableView {
     func setEmptyState() {
-        emptyLabel.isHidden = false
-        spinner.isHidden = true
+        self.backgroundView = emptyLabel
     }
     
-    func popStateView() {
-        emptyLabel.isHidden = true
+    func popEmptyState() {
+        self.backgroundView = nil
     }
     
     func startLoading() {
-        emptyLabel.isHidden = true
-        spinner.isHidden = false
+        self.backgroundView = spinner
     }
     
     func stopLoading() {
-        emptyLabel.isHidden = true
-        spinner.isHidden = true
+        self.backgroundView = nil
     }
 }
