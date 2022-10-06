@@ -11,7 +11,7 @@ class TeachersViewController: UIViewController {
     
     private let service: TeachersServiceTarget
     private var teachers = Teachers()
-    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let tableView = StateTableView()
     
     private var searchController = UISearchController()
     private var sortingType: SortingType = .byName
@@ -32,7 +32,9 @@ class TeachersViewController: UIViewController {
         if isAppeared { return }
         isAppeared = true
         
+        tableView.startLoading()
         service.getTeachers(page: 0, sort: sortingType, completion: { [weak self] _teachers in
+            self?.tableView.stopLoading()
             self?.displayTeachers(_teachers)
             self?.storedTeachers = _teachers
         }, errorCompletition: nil)
@@ -130,8 +132,8 @@ private extension TeachersViewController {
             $0.edges.equalToSuperview()
         }
         tableView.register(
-            TeachersTableViewCell.self,
-            forCellReuseIdentifier: TeachersTableViewCell.identifier)
+            SubtitleTableViewCell.self,
+            forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -150,16 +152,29 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: TeachersTableViewCell.identifier,
-            for: indexPath) as! TeachersTableViewCell
+            withIdentifier: "cell",
+            for: indexPath)
         let teacher = teachers[indexPath.row]
-        let nameString = teacher.firstName + " " + teacher.lastName
-        cell.nameLabel.text = nameString
-        cell.ratingLabel.text = "Рейтинг: " + String(teacher.rating)
+        let nameString =  teacher.lastName + " " + teacher.firstName + " " + " " + teacher.middleName
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = nameString
+        cell.detailTextLabel?.text = "Рейтинг: " + String(teacher.rating)
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        viewForFooterInSection section: Int
+    ) -> UIView? {
         let footer = UIView()
         let button = UIButton()
         
@@ -179,23 +194,28 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         return footer
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForFooterInSection section: Int
+    ) -> CGFloat {
         return 65
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         let vc = SelectedTeacherViewController.module
         vc.teacherToSearch = teachers[indexPath.row].link
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension TeachersViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.isActive {
             guard let text = searchController.searchBar.text else { return }
-            service.searchTeacher(text: text, completion: {[weak self] (_teachers) in
+            service.searchTeacher(text: text, completion: { [weak self] (_teachers) in
                 self?.teachers = _teachers
                 self?.tableView.reloadData()
             }, errorCompletition: nil)
