@@ -11,7 +11,7 @@ import Alamofire
 struct Review: Codable {
     let id, content: String
     let course: Course
-    let rating: Int
+    let rating: Float
     let date: String
 }
 

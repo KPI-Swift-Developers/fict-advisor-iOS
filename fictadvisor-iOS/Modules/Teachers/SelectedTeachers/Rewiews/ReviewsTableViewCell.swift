@@ -10,11 +10,11 @@ import UIKit
 class ReviewsTableViewCell: UITableViewCell {
     static let identifier = "ReviewsTableViewCell"
     
-    let ratingLabel = UILabel()
+    let ratingView = RatingView()
     let subjectLabel = UILabel()
     let reviewTextLabel = UILabel()
     
-    private lazy var supplementaryStackView = UIStackView(arrangedSubviews: [ratingLabel, subjectLabel])
+    private lazy var supplementaryStackView = UIStackView(arrangedSubviews: [ratingView, subjectLabel])
     private lazy var rootStackView = UIStackView(arrangedSubviews: [supplementaryStackView, reviewTextLabel])
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,17 +29,23 @@ class ReviewsTableViewCell: UITableViewCell {
     }
     
     private func setupLabels() {
-        ratingLabel.textColor = .secondaryLabel
         subjectLabel.textColor = .secondaryLabel
         reviewTextLabel.numberOfLines = 0
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        subjectLabel.text = nil
+        ratingView.setRating(rating: 0)
+        reviewTextLabel.text = nil
+    }
+    
     private func setupStackViews() {
         supplementaryStackView.axis = .horizontal
-        supplementaryStackView.distribution = .equalCentering
+        supplementaryStackView.distribution = .fillEqually
         
         rootStackView.axis = .vertical
-        rootStackView.distribution = .fillProportionally
+        rootStackView.distribution = .fill
         
         rootStackView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(10)

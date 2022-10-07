@@ -74,7 +74,7 @@ extension ReviewsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.identifier, for: indexPath) as? ReviewsTableViewCell
         guard let cell = cell else { return UITableViewCell() }
         cell.reviewTextLabel.text = reviews[indexPath.row].content
-        cell.ratingLabel.text = String(reviews[indexPath.row].rating)
+        cell.ratingView.setRating(rating: reviews[indexPath.row].rating)
         cell.subjectLabel.text = reviews[indexPath.row].course.name
         return cell
     }

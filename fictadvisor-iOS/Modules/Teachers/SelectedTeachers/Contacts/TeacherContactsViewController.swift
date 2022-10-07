@@ -37,7 +37,7 @@ extension TeacherContactsViewController {
     private func configureCollectionView() {
         let layuot = UICollectionViewFlowLayout()
         layuot.scrollDirection = .vertical
-        layuot.itemSize = CGSize(width: (view.bounds.width/3) - 7, height: view.bounds.height/10)
+        layuot.itemSize = CGSize(width: (view.bounds.width/2) - 24, height: view.bounds.height/10)
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layuot)
         collectionView.delegate = self
@@ -45,7 +45,7 @@ extension TeacherContactsViewController {
         collectionView.register(TeacherContactsCollectionViewCell.self, forCellWithReuseIdentifier: TeacherContactsCollectionViewCell.identifier)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().inset(18)
         }
     }
     
@@ -54,7 +54,6 @@ extension TeacherContactsViewController {
         if contacts.count == 0 {
             collectionView.backgroundView = NoResultsView()
         }
-
         collectionView.reloadData()
     }
 }
