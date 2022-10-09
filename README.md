@@ -25,17 +25,17 @@ https://core.telegram.org/widgets/login
 - iPadOS support 
 
 ## programm parts 
-(j) - jeyery (s) - sashka
+(j) - jeyery (s) - sashka (?) - status unkonwn (->) later
 
-- main page
-- settings 
+- main page (j)
+- settings (j + s) + help (s)
 - teachers (s) -> oneTeacher (s) -> teacherReview (s) + teacherContacts (s)
 - subjects (j) -> oneSubject (j) -> course (j)
-- superheroes
-- help
-- telegram auth
-- firebase tools 
-- api 
+- superheroes (s)
+- api (j + s)
 - translation strings (?)
+- firebase tools (?)
+- telegram auth (->)
+- api auth (->)
 
 
