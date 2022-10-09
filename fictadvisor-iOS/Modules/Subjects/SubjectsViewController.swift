@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import WebKit
 
 class SubjectsViewController: SearchCoreViewController {
     
@@ -15,7 +16,7 @@ class SubjectsViewController: SearchCoreViewController {
         self.paging = paging
         super.init(
             buttonImage1: UIImage(systemName: "arrow.up.arrow.down"),
-            buttonImage2: nil,
+            buttonImage2: UIImage(systemName: "plus"),
             largeNavigation: true)
         configureTableView()
         configureViewController()
@@ -66,6 +67,11 @@ class SubjectsViewController: SearchCoreViewController {
         )
         present(alert, animated: true, completion: nil)
     }
+    
+    override func didTapNavigationButton2() {
+        present(TelegramAuthViewController(), animated: true, completion: nil)
+    }
+    
     
     override func didTapCloseButton(_ searchBarViewController: UISearchController) {
         displaySubjects(storedSubjects)
@@ -245,5 +251,37 @@ extension SubjectsViewController: UITableViewDelegate, UITableViewDataSource {
         heightForFooterInSection section: Int
     ) -> CGFloat {
         return 65
+    }
+}
+
+
+class TelegramAuthViewController: UIViewController {
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        let webView = WKWebView()
+        
+        view.addSubview(webView)
+        webView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+//        guard let url = URL(string: "https://oauth.telegram.org/embed/samplebot?origin=https%3A%2F%2Fcore.telegram.org&size=large&request_access=write") else {
+//             return
+//        }
+        
+        let url = Bundle.main.url(forResource: "TelegramAuth", withExtension: "html")!
+        
+        var request = URLRequest(url: url)
+        request.setValue(Locale.current.languageCode, forHTTPHeaderField: "Content-Language")
+        request.httpMethod = "GET"
+        
+        //webView.load(request)
+        webView.loadFileURL(url, allowingReadAccessTo: url)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
     }
 }

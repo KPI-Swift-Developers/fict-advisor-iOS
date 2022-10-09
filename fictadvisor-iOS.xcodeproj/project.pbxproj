@@ -31,6 +31,7 @@
 		3E488EA928E705CC00C05803 /* CoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EA828E705CC00C05803 /* CoreViewController.swift */; };
 		3E488EAB28E705D800C05803 /* SearchCoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */; };
 		3E97034F28EEFDFF00989671 /* StateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97034E28EEFDFF00989671 /* StateButton.swift */; };
+		3E97035128EF9BAC00989671 /* TelegramAuth.html in Resources */ = {isa = PBXBuildFile; fileRef = 3E97035028EF9BAC00989671 /* TelegramAuth.html */; };
 		3EAF683028E2F8E1000BFD72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */; };
 		3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683828E2F8E3000BFD72 /* Assets.xcassets */; };
 		3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAF683A28E2F8E3000BFD72 /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		3E488EA828E705CC00C05803 /* CoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewController.swift; sourceTree = "<group>"; };
 		3E488EAA28E705D800C05803 /* SearchCoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoreViewController.swift; sourceTree = "<group>"; };
 		3E97034E28EEFDFF00989671 /* StateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateButton.swift; sourceTree = "<group>"; };
+		3E97035028EF9BAC00989671 /* TelegramAuth.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TelegramAuth.html; sourceTree = "<group>"; };
 		3EAF682C28E2F8E1000BFD72 /* fictadvisor-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fictadvisor-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAF682F28E2F8E1000BFD72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EAF683828E2F8E3000BFD72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				3ED4AEEF28ECCD69009A1E80 /* OneSubject */,
 				3EAF685328E304DF000BFD72 /* SubjectsViewController.swift */,
 				3EAF685D28E318EE000BFD72 /* SubjectsViewController+Module.swift */,
+				3E97035028EF9BAC00989671 /* TelegramAuth.html */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E97035128EF9BAC00989671 /* TelegramAuth.html in Resources */,
 				3EAF683C28E2F8E3000BFD72 /* LaunchScreen.storyboard in Resources */,
 				3EAF683928E2F8E3000BFD72 /* Assets.xcassets in Resources */,
 			);

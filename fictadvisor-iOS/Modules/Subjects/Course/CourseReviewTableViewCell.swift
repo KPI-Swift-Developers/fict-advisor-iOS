@@ -55,7 +55,7 @@ class CourseReviewTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = dateFormatter.date(from: review.date)
         
-        dateFormatter.dateFormat = "dd.mm.yyyy"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         let dateString = dateFormatter.string(from: date!)
         
         dateLabel.text = dateString
