@@ -12,7 +12,7 @@ class SelectedTeacherViewController: SearchCoreViewController {
     private let service: SelectedTeacherService
     private let segmenedControl = UISegmentedControl(items: ["Предмети", "Відгуки", "Контакти"])
     private var containerViewController = UIViewController()
-    var teacherToSearch = String()
+    var teacherLink = String()
     
     private var teacher: OneTeacher! {
         didSet {
@@ -33,7 +33,7 @@ class SelectedTeacherViewController: SearchCoreViewController {
         super.viewDidCreated()
         view.backgroundColor = .systemBackground
         setupView()
-        service.getTeacher(teacher: teacherToSearch, completion: { [weak self] (_teacher) in
+        service.getTeacher(teacher: teacherLink, completion: { [weak self] (_teacher) in
             self?.teacher = _teacher
         }, errorCompletion: nil)
         segmentedControllDidTap()
@@ -57,17 +57,17 @@ private extension SelectedTeacherViewController {
         if segmenedControl.selectedSegmentIndex == 0 {
             view.subviews.forEach({ $0.removeFromSuperview() })
             let vc = TeacherSubjectsViewController.module
-            vc.teacherToSearch = teacherToSearch
+            vc.teacherLink = teacherLink
             containerViewController = vc
         } else if segmenedControl.selectedSegmentIndex == 1 {
             view.subviews.forEach({ $0.removeFromSuperview() })
             let vc = ReviewsViewController.module
-            vc.teacherToSearch = teacherToSearch
+            vc.teacherLink = teacherLink
             containerViewController = vc
         } else {
             view.subviews.forEach({ $0.removeFromSuperview() })
             let vc = TeacherContactsViewController.module
-            vc.teacherToSearch = teacherToSearch
+            vc.teacherlink = teacherLink
             containerViewController = vc
         }
         view.addSubview(containerViewController.view)

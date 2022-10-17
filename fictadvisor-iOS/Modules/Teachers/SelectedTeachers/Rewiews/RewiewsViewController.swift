@@ -12,7 +12,7 @@ class ReviewsViewController: SearchCoreViewController {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let service: ReviewsServiceTarget
     private var reviews = Reviews()
-    var teacherToSearch = String()
+    var teacherLink = String()
     
     init (service: ReviewsServiceTarget) {
         self.service = service
@@ -25,7 +25,7 @@ class ReviewsViewController: SearchCoreViewController {
     
     override func viewDidCreated() {
         super.viewDidCreated()
-        service.getReviews(teacher: teacherToSearch, completion: {[weak self] _reviews in
+        service.getReviews(teacher: teacherLink, completion: {[weak self] _reviews in
             self?.displayReviews(reviews: _reviews)
         }, errorCompletion: nil)
         configureTableView()

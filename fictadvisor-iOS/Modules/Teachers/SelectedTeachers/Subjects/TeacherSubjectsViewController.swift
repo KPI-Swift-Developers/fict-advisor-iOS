@@ -8,7 +8,7 @@
 import UIKit
 
 class TeacherSubjectsViewController: UIViewController {
-    var teacherToSearch = String()
+    var teacherLink = String()
     let service: TeacherSubjectsServiceTarget
     var subjects = TeacherSubjects()
     private var tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -24,7 +24,7 @@ class TeacherSubjectsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureTableView()
-        service.getSubjects(for: teacherToSearch, completion: {[weak self] (_subjects) in
+        service.getSubjects(for: teacherLink, completion: {[weak self] (_subjects) in
             self?.displaySubjects(subjects: _subjects)
         }, errorCompletion: nil)
     }

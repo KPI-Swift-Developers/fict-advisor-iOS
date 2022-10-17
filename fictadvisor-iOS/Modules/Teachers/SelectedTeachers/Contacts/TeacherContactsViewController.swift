@@ -8,7 +8,7 @@
 import UIKit
 
 class TeacherContactsViewController: UIViewController {
-    var teacherToSearch = String()
+    var teacherlink = String()
     private var teacherContacts = TeacherContacts()
     private var collectionView: UICollectionView! = nil
     let setvice: TeacherContactServiceTarget
@@ -26,7 +26,7 @@ class TeacherContactsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureCollectionView()
-        setvice.getContacts(for: teacherToSearch, completion: {[weak self] (_contacts) in
+        setvice.getContacts(for: teacherlink, completion: {[weak self] (_contacts) in
             self?.displayContacts(contacts: _contacts)
         }, errorCompletion: nil)
         

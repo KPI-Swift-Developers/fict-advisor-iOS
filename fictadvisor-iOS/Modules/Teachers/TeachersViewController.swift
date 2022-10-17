@@ -208,7 +208,7 @@ extension TeachersViewController: UITableViewDelegate, UITableViewDataSource {
         didSelectRowAt indexPath: IndexPath
     ) {
         let vc = SelectedTeacherViewController.module
-        vc.teacherToSearch = teachers[indexPath.row].link
+        vc.teacherLink = teachers[indexPath.row].link
         navigationController?.pushViewController(vc, animated: true)
     }
 }
